@@ -1,1 +1,1 @@
-# JavaScript-1
+# javascript-1-course-assignment
