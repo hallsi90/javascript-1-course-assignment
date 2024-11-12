@@ -121,7 +121,11 @@ section {
 }
 
 /* NEW STYLES FOR THE JAVASCRIPT 1 COURSE ASSIGNMENT */
-
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--main-white-color);
+}
 h2 {
   font-size: 3rem;
   text-align: center;

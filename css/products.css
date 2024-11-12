@@ -1,5 +1,5 @@
 /* MAIN */
-
+/*
 .shop-womens-jackets h1 {
   font-size: 1.9rem;
   text-align: left;
@@ -33,7 +33,7 @@ p {
   font-weight: bold;
 }
 /* MEDIA SCREENS */
-
+/*
 @media screen and (min-width: 375px) {
   .shop-womens-jackets h1 {
     font-size: 2.7rem;
@@ -67,3 +67,4 @@ p {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+*/

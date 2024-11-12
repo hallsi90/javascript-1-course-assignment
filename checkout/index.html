@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/checkout.css" />
+    <script src="/js/checkout.js" defer></script>
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
@@ -20,7 +21,7 @@
   <body>
     <header>
       <div class="header-logo">
-        <a href="/html/index.html">
+        <a href="/index.html">
           <img
             src="/images/logo/rainydays_logo_just_mountain.png"
             alt="Rainydays mountain logo"
@@ -33,8 +34,8 @@
         ></label>
         <nav>
           <ul>
-            <li><a href="/html/index.html">Home</a></li>
-            <li><a href="/html/products.html">Jackets</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/html/jackets.html">Jackets</a></li>
             <li><a href="/html/about.html">About</a></li>
             <li><a href="/html/contact.html">Contact</a></li>
           </ul>
@@ -62,7 +63,7 @@
             />
           </div>
         </div>
-        <a href="/html/checkout/index.html"
+        <a href="/checkout/index.html"
           ><i
             class="fa-solid fa-cart-shopping"
             value="0"
@@ -72,146 +73,9 @@
       </div>
     </header>
     <main>
-      <h1>Checkout</h1>
-      <div class="checkout-container">
-        <div class="your-order">
-          <h2>Your order</h2>
-          <div class="product-information-container">
-            <div class="product-information">
-              <a href="/html/product/index.html">
-                <img
-                  src="/images/products/women/rain_slayer.jpg"
-                  alt="Women's Rain Slayer"
-                  class="product-picture"
-              /></a>
-            </div>
-            <div class="product-information">
-              <h3>Rain Slayer</h3>
-              <p>Size: M</p>
-              <p>Colour: Aquarius</p>
-              <h3>3499 NOK</h3>
-              <small>Edit order</small>
-            </div>
-          </div>
-          <h4>Order total</h4>
-          <p>Free shipping</p>
-          <h2>3499 NOK</h2>
-          <small>Estimated delivery: 1-3 days</small>
-        </div>
-        <div class="your-information">
-          <h2>Your information</h2>
-          <div class="personal-information-container">
-            <form>
-              <label for="first_name">First name</label>
-              <input
-                type="text"
-                name="first_name"
-                id="first_name"
-                class="contact-information"
-                required
-              />
-              <label for="last_name">Last name</label>
-              <input
-                type="text"
-                name="last_name"
-                id="last_name"
-                class="contact-information"
-                required
-              />
-              <label for="address">Street address</label
-              ><input
-                type="text"
-                name="address"
-                id="address"
-                class="contact-information"
-                required
-              />
-              <label for="postal_code">Postal code</label
-              ><input
-                type="text"
-                name="postal_code"
-                id="postal_code"
-                class="contact-information"
-                required
-              />
-              <label for="city">City</label
-              ><input
-                type="text"
-                name="city"
-                id="city"
-                class="contact-information"
-                required
-              />
-              <label for="email">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="contact-information"
-                required
-              />
-              <label for="number">Phone</label
-              ><input
-                type="number"
-                name="number"
-                id="number"
-                class="contact-information"
-                required
-              />
-            </form>
-          </div>
-        </div>
-        <div class="payment-method">
-          <h2>Payment method</h2>
-          <div class="payment-method-container">
-            <fieldset>
-              <legend>Choose your payment method</legend>
-              <input
-                type="radio"
-                name="payment_method"
-                id="klarna"
-                value="klarna"
-              /><label for="klarna">Klarna </label>
-              <div>
-                <input
-                  type="radio"
-                  name="payment_method"
-                  id="vipps"
-                  value="vipps"
-                /><label for="vipps">Vipps </label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="payment_method"
-                  id="credit_card"
-                  value="credit_card"
-                /><label for="credit_card">Credit Card </label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="payment_method"
-                  id="paypal"
-                  value="paypal"
-                /><label for="paypal">PayPal </label>
-              </div>
-            </fieldset>
-          </div>
-        </div>
-      </div>
-      <form action="/checkout/confirmation/index.html" class="button-container">
-        <button class="cta-button">Pay now</button>
-      </form>
-      <div class="payment-icons-container">
-        <div class="payment">
-          <img src="/images/icons/klarna.svg" alt="klarna icon" />
-          <img src="/images/icons/vipps.png" alt="vipps icon" />
-          <img src="/images/icons/visa.svg" alt="visa icon" />
-          <img src="/images/icons/mastercard.svg" alt="mastercard icon" />
-          <img src="/images/icons/paypal.svg" alt="paypal icon" />
-        </div>
-      </div>
+      <h1>Your Cart</h1>
+      <div id="cart-items"></div>
+      <button class="cta-button" id="checkout-button">Pay Now</button>
     </main>
     <footer>
       <div class="footer-container">
@@ -220,7 +84,7 @@
           <ul>
             <li><a href="/html/women.html">Women's</a></li>
             <li><a href="/html/men.html">Men's</a></li>
-            <li><a href="#">By Activity</a></li>
+            <li><a href="/html/jackets.html">All Jackets</a></li>
             <li><a href="#">Gift Cards</a></li>
           </ul>
         </div>
@@ -314,7 +178,7 @@
         </div>
 
         <div class="footer-logo">
-          <a href="/html/index.html">
+          <a href="/index.html">
             <img
               src="/images/logo/rainydays_logo_full.png"
               alt="Rainydays Logo"
