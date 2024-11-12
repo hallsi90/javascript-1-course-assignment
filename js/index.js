@@ -61,6 +61,12 @@ function displayProducts(products) {
     <p>Price: ${product.price} USD</p>
 `;
 
+    // Store the product data in the click event for later use
+    productDiv.onclick = () => {
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      window.location.href = "/product/index.html"; // Redirect to product page
+    };
+
     productList.appendChild(productDiv);
   });
 }

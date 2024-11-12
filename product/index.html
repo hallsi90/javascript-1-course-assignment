@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/product.css" />
+    <script src="/js/product.js" defer></script>
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
@@ -20,7 +21,7 @@
   <body>
     <header>
       <div class="header-logo">
-        <a href="/html/index.html">
+        <a href="/index.html">
           <img
             src="/images/logo/rainydays_logo_just_mountain.png"
             alt="Rainydays mountain logo"
@@ -62,7 +63,7 @@
             />
           </div>
         </div>
-        <a href="/html/checkout/index.html"
+        <a href="/checkout/index.html"
           ><i
             class="fa-solid fa-cart-shopping"
             value="0"
@@ -72,160 +73,20 @@
       </div>
     </header>
     <main>
-      <div class="right-1">
-        <h1>Rain Slayer</h1>
-        <div class="wishlist-container">
-          <h2>NOK 3499</h2>
-          <small
-            >Wishlist
-            <i class="fa-regular fa-heart" aria-label="wishlist heart icon"></i
-          ></small>
-        </div>
-      </div>
-      <div class="left-1">
-        <div class="large-img-product-container">
-          <img
-            src="/images/products/women/rain_slayer.jpg"
-            alt="Women's Rain Slayer"
-            class="large-product-img"
-          />
-        </div>
-        <div class="small-img-product-container">
-          <img
-            src="/images/products/women/product/rain_slayer_back.jpg"
-            alt="Women's Rain Slayer Aquarius Back"
-            class="product-img"
-          />
-          <img
-            src="/images/products/women/product/rain_slayer_back_model.jpg"
-            alt="Women's Rain Slayer Aquarius Back Model"
-            class="product-img"
-          />
-          <img
-            src="/images/products/women/product/rain_slayer_front_model.jpg"
-            alt="Women's Rain Slayer Aquarius Front Model"
-            class="product-img"
-          />
-          <img
-            src="/images/products/women/product/rain_slayer_side_model.jpg"
-            alt="Women's Rain Slayer Aquarius Side Model"
-            class="product-img"
-          />
-        </div>
-        <div class="hide-small-screen">
-          <hr />
-        </div>
-      </div>
+      <a href="/checkout/index.html" id="cart-icon"
+        ><img src="cart-icon.png" alt="Cart" /><span id="cart-count">0</span>
+        <!-- to show the number of items in the cart --></a
+      >
 
-      <div class="right-2">
-        <h3>Colours</h3>
-        <div class="colours-img-product-container">
-          <div class="product-img-colours">
-            <img
-              src="/images/products/women/rain_slayer.jpg"
-              alt="Women's Rain Slayer Aquarius"
-            />
-            <small>Aquarius</small>
-          </div>
-          <div class="product-img-colours">
-            <img
-              src="/images/products/women/product/rain_slayer_orange_alert.jpg"
-              alt="Women's Rain Slayer Orange Alert"
-            />
-            <small>Orange Alert</small>
-          </div>
-          <div class="product-img-colours">
-            <img
-              src="/images/products/women/product/rain_slayer_sulphur.jpg"
-              alt="Women's Rain Slayer Sulphur"
-            />
-            <small>Sulphur</small>
-          </div>
+      <div class="product-details">
+        <h1 id="product-title">Product Title</h1>
+        <div class="image-container">
+          <img id="product-image" alt="Product Image" />
         </div>
-
-        <hr />
-        <div class="size-container">
-          <p><strong>Size</strong></p>
-          <small>Size Guide</small>
-          <div class="sizes">
-            <p>XS</p>
-            <p>S</p>
-            <p>M</p>
-            <p>L</p>
-            <p>XL</p>
-          </div>
-        </div>
-        <hr />
-        <button class="cta-button">Add to cart</button>
-        <hr />
-        <small>
-          Free shipping above 1 000 NOK. <br />Free returns in Norway. <br />5
-          years warranty.</small
-        >
-        <hr />
-
-        <p>Our most versatile waterproof jacket.</p>
-        <p>
-          Rain Slayer is designed to protect you from the most severe weather
-          conditions. It is made with a premium Gore-Tex fabric which is the
-          world-leading membrane for durable waterproofness (28.000mm),
-          optimized breathability (RET 9), and total windproofness. Therefore
-          Rain Slayer have an impressive ability to repel water, keep you dry,
-          and protect you from harsh wind gusts.
-        </p>
-        <p>
-          The jacket comes equipped with special features, such as sealed seams
-          and waterproof zippers, which provide an additional barrier against
-          rain and wind. It also have adjustable hood, cuffs and waistband to
-          ensure a comfortable, snug fit that keeps the elements out.
-        </p>
-        <p>
-          The Rain Slayer jacket are available in various sizes and colours to
-          fit everyones needs and wants.
-        </p>
-        <p>
-          This versital jacket is suitable for various outdoor activities, such
-          as hiking, skiing, climbing and camping. With a Rain Slayer jacket,
-          you can confidently brave stormy weather conditions and stay dry and
-          comfortable.
-        </p>
-      </div>
-      <div class="left-2">
-        <div class="hide-large-screen">
-          <hr />
-        </div>
-        <h2>Key features:</h2>
-        <ul>
-          <li>Waterproof and breathable Gore-Tex fabric.</li>
-          <li>
-            Sealed seams and zippers to prevent water from leaking through
-            stitching and seams.
-          </li>
-          <li>
-            Adjustable hood with a brim and drawstring to keep rain off the head
-            and face.
-          </li>
-          <li>
-            Velcro adjustable cuffs and elasticized waist to ensure a snug,
-            comfortable fit that stays in place during movement.
-          </li>
-          <li>
-            Zippered pockets for conveniently storing belongings and keeping
-            them dry.
-          </li>
-          <li>
-            Long underarm vents with two-way zipper to ensure good ventilation
-            in warm weather.
-          </li>
-          <li>Reflectinve detailing for visibility in low-light conditions.</li>
-          <li>
-            Stowable hood for versatility depending on weather conditions.
-          </li>
-          <li>
-            Available in different colours to suit personal style preferences.
-          </li>
-          <li>Durable and lightweight for a variety of outdoor activities.</li>
-        </ul>
+        <p id="product-description">Description</p>
+        <p id="product-sizes">Sizes: Not available</p>
+        <p id="product-price">Price: 0 USD</p>
+        <button class="cta-button" id="add-to-cart-button">Add to Cart</button>
       </div>
     </main>
     <footer>
@@ -329,7 +190,7 @@
         </div>
 
         <div class="footer-logo">
-          <a href="/html/index.html">
+          <a href="/index.html">
             <img
               src="/images/logo/rainydays_logo_full.png"
               alt="Rainydays Logo"

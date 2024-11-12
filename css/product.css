@@ -1,19 +1,76 @@
 h1 {
   font-size: 2.6rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
+p {
+  font-size: 1.5rem;
+}
+
+#product-sizes {
+  font-weight: bold;
+}
+
+#product-price {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.cta-button {
+  color: var(--main-blue-color);
+  background-color: var(--main-white-color);
+  padding: 10px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 30px auto;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
+.cta-button:hover {
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
+  border: 2px solid var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+
+.image-container {
+  width: 100%; /* Fill the container width */
+  height: auto; /* Change height to auto to maintain aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow if necessary */
+  flex-grow: 1;
+}
+
+#product-image {
+  width: auto; /* Ensure it fits within the container */
+  height: auto;
+  max-width: 100%; /* Prevent the image from exceeding the container width */
+  max-height: 500px; /* Set a maximum height if needed */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+}
+.product-details {
+  text-align: center;
+  margin: 20px;
+}
+
+/*
 h2 {
   font-size: 2rem;
 }
 h3 {
   font-size: 1.8rem;
 }
-p,
-li {
+  li {
   font-size: 1.5rem;
 }
-
 small {
   font-size: 1.1rem;
 }
@@ -25,7 +82,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.fa-heart {
+  .fa-heart {
   color: var(--main-white-color);
 }
 .wishlist-container {
@@ -48,6 +105,7 @@ hr {
   margin-top: 5px;
   margin-bottom: 30px;
 }
+
 .colours-img-product-container {
   display: flex;
   justify-content: center;
@@ -75,25 +133,9 @@ img.product-img,
   display: inline;
   padding-right: 10px;
 }
-.cta-button {
-  color: var(--main-blue-color);
-  background-color: var(--main-white-color);
-  padding: 10px 50px;
-  font-size: 2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 30px auto;
-  display: flex;
-  border: none;
-  box-shadow: 5px 5px 5px black;
-}
-.cta-button:hover {
-  color: var(--main-white-color);
-  background-color: var(--main-blue-color);
-  border: 2px solid var(--main-white-color);
-  transition: ease-in-out 200ms;
-}
+*/
+
+/*
 @media screen and (max-width: 1023px) {
   .hide-small-screen {
     display: none;
@@ -166,3 +208,4 @@ img.product-img,
     display: none;
   }
 }
+*/
