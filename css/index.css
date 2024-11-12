@@ -1,0 +1,368 @@
+/* INTRODUCTION SECTION STYLES*/
+
+section {
+  margin-bottom: 40px;
+}
+
+.introduction-content-container {
+  color: var(--main-white-color);
+  background-color: var(--main-white-color);
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+.top-image {
+  height: 100%; /* Adjust the height of the top image */
+  background-image: url("../images/home/start/two_people_hiking_on_mountain_during_daytime.jpg");
+  margin-bottom: 2px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* Ensures child elements don't overflow */
+}
+.background h1 {
+  font-size: 2rem;
+  position: absolute;
+  white-space: nowrap; /* Prevent text from wrapping */
+  top: 10%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the h1 within the .background div */
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+.explore-button-container {
+  display: block;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+.explore-button-container button {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--main-blue-color);
+  cursor: pointer;
+  background: var(--main-white-color);
+  color: var(--main-blue-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.explore-button-container button:hover {
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+.explore-button-container form {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+.overlay h2 {
+  font-size: 1.5rem;
+  position: absolute;
+  white-space: nowrap;
+  top: 93%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the h1 within the .background div */
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+.bottom-background-images {
+  height: 20vh;
+  display: flex;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.bottom-image-1 {
+  flex: 2;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/man_ice_skiing_on_hill_cropped_and_resized.jpg");
+  background-position: right;
+  background-size: cover;
+}
+.bottom-image-2 {
+  flex: 2;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/man_with_snowboard_standing_on_top_of_mountain_cropped_and_resized.jpg");
+  background-position: left;
+  background-size: cover;
+}
+.bottom-image-3 {
+  flex: 1;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/two_people_canoeing_resized.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value for transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure the overlay is below the h1 */
+}
+
+/* NEW STYLES FOR THE JAVASCRIPT 1 COURSE ASSIGNMENT */
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h3 {
+  color: var(--main-blue-color);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+p {
+  color: var(--main-blue-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#filter-container {
+  text-align: center; /* Center the filter */
+  margin-bottom: 20px; /* Space between filter and products */
+}
+
+#gender-filter {
+  padding: 8px;
+  width: 200px; /* Match the width of the product cards */
+  border: 1px solid #ddd; /* Optional: to match product cards */
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align all items */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: white;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px; /* Add space between products */
+  height: 350px; /* Set a fixed height for the product container */
+  box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+}
+
+.image-container {
+  width: 100%; /* Fill the container width */
+  height: 200px; /* Fixed height for the image container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow to prevent cropping */
+  flex-grow: 1;
+}
+
+.product img {
+  width: 100%; /* Set the image width to fill the container */
+  height: 100%; /* Set the image height to fill the container */
+  object-fit: contain; /* Ensure the entire image is visible while maintaining aspect ratio */
+  max-height: 100%; /* Prevent the image from exceeding the container height */
+}
+
+.product:hover {
+  transform: scale(1.02); /* Slightly enlarge the product card on hover */
+  transition: transform 0.2s; /* Smooth transition effect */
+}
+
+.loading {
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers the spinner horizontally */
+  align-items: center; /* Centers the spinner vertically */
+  height: 100px; /* Sets the height of the loading area */
+}
+
+.spinner {
+  color: #5b7880; /* Sets the spinner's color */
+  font-size: 10px; /* Sets the size of the spinner */
+  width: 1em; /* Sets the width */
+  height: 1em; /* Sets the height */
+  border-radius: 50%; /* Makes the spinner circular */
+  position: relative; /* Positions the spinner relative to its parent */
+  text-indent: -9999em; /* Hides text content (for accessibility) */
+  animation: mulShdSpin 1.3s infinite linear; /* Applies spinning animation */
+  transform: translateZ(0); /* Improves rendering performance */
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+/* MEDIA SCREENS */
+
+@media screen and (min-width: 375px) {
+  .background h1 {
+    font-size: 2.5rem;
+  }
+  .overlay h2 {
+    font-size: 1.8rem;
+    top: 92%;
+  }
+  .explore button {
+    font-size: 1.2rem;
+  }
+  .introduction-content-container {
+    height: 70vh;
+  }
+  .bottom-background-images {
+    height: 30vh;
+  }
+}
+@media screen and (min-width: 485px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+  .introduction-content h2 {
+    font-size: 2.5rem;
+    padding-top: 50px;
+  }
+  .explore button {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 520px) {
+  .background h1 {
+    font-size: 3rem;
+  }
+  .overlay h2 {
+    font-size: 2.3rem;
+    top: 92%;
+  }
+
+  .introduction-content-container {
+    height: 70vh;
+  }
+  .bottom-background-images {
+    height: 35vh;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    margin: 50px;
+  }
+  .background h1 {
+    font-size: 4rem;
+  }
+  .overlay h2 {
+    font-size: 3rem;
+    top: 91%;
+  }
+  .explore button {
+    font-size: 1.8rem;
+  }
+  .introduction-content-container {
+    height: 80vh;
+  }
+  .bottom-background-images {
+    height: 40vh;
+  }
+}
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+  .introduction-content h2 {
+    font-size: 4rem;
+    padding-top: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .background h1 {
+    font-size: 4.8rem;
+  }
+  .overlay h2 {
+    font-size: 4rem;
+    top: 91%;
+  }
+  .explore button {
+    font-size: 2.5rem;
+  }
+  .introduction-content-container {
+    height: 90vh;
+  }
+  .bottom-background-images {
+    height: 50vh;
+  }
+  .top-image {
+    margin-bottom: 10px;
+  }
+  .bottom-background-images {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .introduction-content-container {
+    height: 100vh;
+  }
+  .bottom-background-images {
+    height: 60vh;
+  }
+}

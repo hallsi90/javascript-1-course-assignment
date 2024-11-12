@@ -1,0 +1,168 @@
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+p,
+li {
+  font-size: 1.5rem;
+}
+
+small {
+  font-size: 1.1rem;
+}
+ul {
+  padding-left: 15px;
+}
+hr {
+  border: 1px solid var(--design-details-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.fa-heart {
+  color: var(--main-white-color);
+}
+.wishlist-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.wishlist-container h2 {
+  margin: 0;
+}
+.lagre-img-product-container {
+  display: flex;
+  justify-content: center;
+}
+
+.small-img-product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.colours-img-product-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.colours-img-product-container small {
+  display: flex;
+  justify-content: center;
+}
+
+img.large-product-img,
+img.product-img,
+.product-img-colours img {
+  background-color: var(--design-details-color);
+}
+.size-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+}
+.size-container small {
+  grid-column: -1;
+}
+.sizes p {
+  display: inline;
+  padding-right: 10px;
+}
+.cta-button {
+  color: var(--main-blue-color);
+  background-color: var(--main-white-color);
+  padding: 10px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 30px auto;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
+.cta-button:hover {
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
+  border: 2px solid var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+@media screen and (max-width: 1023px) {
+  .hide-small-screen {
+    display: none;
+  }
+}
+@media screen and (min-width: 450px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  p,
+  li {
+    font-size: 1.8rem;
+  }
+  small {
+    font-size: 1.5rem;
+  }
+  .cta-button {
+    padding: 10px 80px;
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  main {
+    margin: 50px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  .cta-button {
+    padding: 10px 100px;
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main {
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left1 right1"
+      "left1  right2"
+      "left2 right2"
+      "left2 right2";
+  }
+  .left-1 {
+    grid-area: left1;
+  }
+  .left-2 {
+    grid-area: left2;
+  }
+  .right-1 {
+    grid-area: right1;
+  }
+  .right-2 {
+    grid-area: right2;
+  }
+  h1 {
+    margin-top: 0;
+  }
+  .hide-small-screen {
+    padding-top: 10px;
+  }
+  .hide-large-screen {
+    display: none;
+  }
+}

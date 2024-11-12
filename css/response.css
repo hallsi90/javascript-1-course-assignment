@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+@media screen and (min-width: 450px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 730px) {
+  h1 {
+    font-size: 4rem;
+  }
+}

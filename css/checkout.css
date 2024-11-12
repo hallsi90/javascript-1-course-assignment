@@ -1,0 +1,196 @@
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+p {
+  font-size: 1.2rem;
+}
+a {
+  text-decoration: none;
+}
+fieldset {
+  border: none;
+}
+legend {
+  display: none;
+}
+.checkout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.your-order,
+.your-information,
+.payment-method {
+  box-sizing: border-box;
+  border: 1px solid var(--main-white-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+.product-information-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.product-information h3 {
+  margin-top: 0;
+}
+.product-information p {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+.product-picture {
+  width: 100%;
+  max-width: 200px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+
+.personal-information-container form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.personal-information-container input {
+  padding: 5px;
+  border: solid 1px var(--main-white-color);
+  border-radius: 5px;
+  margin: 10px 0px;
+  font-size: 1.5rem;
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+}
+.personal-information-container label {
+  font-size: 1.5em;
+}
+
+.payment-method-container input,
+.payment-method-container label {
+  font-size: 1.5rem;
+  margin: 5px 5px;
+}
+
+.button-container {
+  margin: 0 auto;
+  max-width: none;
+}
+.cta-button {
+  color: var(--main-blue-color);
+  background-color: var(--main-white-color);
+  padding: 10px 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 30px auto;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
+.cta-button:hover {
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
+  border: 2px solid var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+.payment {
+  background-color: var(--main-white-color);
+  padding: 10px;
+  border-radius: 5px;
+}
+.payment-icons-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.payment img {
+  width: 35px;
+  height: 20px;
+}
+@media screen and (min-width: 375px) {
+  .checkout-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 4.8rem;
+    text-align: center;
+  }
+  h2 {
+    font-size: 4rem;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  small {
+    font-size: 1.5rem;
+  }
+  .product-information p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .personal-information-container input,
+  .personal-information-container label {
+    font-size: 2rem;
+  }
+  .payment-method-container {
+    padding-bottom: 10px;
+  }
+  .payment-method-container input,
+  .payment-method-container label {
+    font-size: 2rem;
+    margin: 10px;
+  }
+
+  .cta-button {
+    padding: 10px 100px 10px 100px;
+    font-size: 3rem;
+    margin: 70px auto;
+  }
+  .payment img {
+    width: 60px;
+    height: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .checkout-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: fit-content;
+  }
+  .cta-button {
+    padding: 20px 200px;
+    font-size: 4rem;
+    margin: 70px auto;
+  }
+  .payment img {
+    width: 70px;
+    height: 35px;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .checkout-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
