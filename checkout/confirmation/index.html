@@ -8,13 +8,19 @@
       name="description"
       content="The Checkout Success Page of the Rainydays website. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/checkoutsuccess.css" />
+    <link rel="stylesheet" href="/css/confirmation.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script src="/js/common.js" defer></script>
+
     <title>Rainydays | Checkout Success</title>
   </head>
   <body>
@@ -62,80 +68,29 @@
             />
           </div>
         </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
+        <a href="/checkout/index.html" id="cart-icon">
+          <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
+          <span id="cart-count">0</span>
+        </a>
       </div>
     </header>
+    <!-- Error message container -->
+    <div id="error-message" class="error-message"></div>
     <main>
-      <div class="check-icon">
-        <i
-          class="fa-regular fa-circle-check"
-          aria-label="Successful checkout icon"
-        ></i>
+      <div class="confirmation-container">
+        <div class="check-icon">
+          <i
+            class="fa-regular fa-circle-check"
+            aria-label="Successful checkout icon"
+          ></i>
+        </div>
+        <h1>Thank you for your purchase!</h1>
+        <p>
+          Your order has been successfully placed and your purchase will be
+          shipped to you shortly. Thank you for shopping with us! We hope you
+          enjoy your new jacket(s)!
+        </p>
       </div>
-      <h1>Thank you for your purchase!</h1>
-      <p>Your order # is: 00734689</p>
-      <p>
-        We have received your payment and your purchase will be shipped to you
-        shortly. Please check your email for a confirmation and tracking number.
-        Thank you for shopping with us!
-      </p>
-      <h2>Order details</h2>
-      <section>
-        <div class="order">
-          <div class="order-details">
-            <h3>Product</h3>
-            <p>Rain slayer</p>
-            <div class="order-img">
-              <a href="/html/product/index.html">
-                <img
-                  src="/images/products/women/product/rain_slayer_front.jpg"
-                  alt="Women's Rain Slayer Aquarious"
-              /></a>
-            </div>
-          </div>
-          <div class="subtotal">
-            <h3>Price</h3>
-            <p>NOK 3499</p>
-          </div>
-          <div class="subtotal">
-            <h3>Qty.</h3>
-            <p>1</p>
-          </div>
-          <div class="subtotal">
-            <h3>Shipping</h3>
-            <p>Free</p>
-          </div>
-          <div class="subtotal">
-            <h3>Grand total</h3>
-            <h3>NOK 3499</h3>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Order information</h2>
-        <div class="order-information">
-          <div>
-            <h3>Shipping Address</h3>
-            <p>First and last name</p>
-            <p>City and postal code</p>
-            <p>Phone number</p>
-          </div>
-          <div>
-            <h3>Shipping Method</h3>
-            <p>Free shipping</p>
-          </div>
-          <div>
-            <h3>Payment Method</h3>
-            <p>Klarna</p>
-          </div>
-        </div>
-      </section>
     </main>
     <footer>
       <div class="footer-container">
@@ -200,7 +155,7 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </li>
             <li>
               <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>

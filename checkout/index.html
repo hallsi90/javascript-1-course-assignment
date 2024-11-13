@@ -8,184 +8,197 @@
       name="description"
       content="The Checkout Page of the Rainydays website. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/checkout.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/cart.js" defer></script>
     <script src="/js/checkout.js" defer></script>
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <title>Rainydays | Checkout Page</title>
   </head>
   <body>
-    <header>
-      <div class="header-logo">
-        <a href="/index.html">
-          <img
-            src="/images/logo/rainydays_logo_just_mountain.png"
-            alt="Rainydays mountain logo"
-        /></a>
-      </div>
-      <div class="menu">
-        <input type="checkbox" id="hamburger-menu" />
-        <label for="hamburger-menu"
-          ><i class="fa-solid fa-bars hamburger-menu" aria-label="Menu"></i
-        ></label>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/html/jackets.html">Jackets</a></li>
-            <li><a href="/html/about.html">About</a></li>
-            <li><a href="/html/contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="icons">
-        <div class="search-container">
-          <input
-            type="checkbox"
-            id="toggle-search"
-            class="toggle-search-checkbox"
-          />
-          <label for="toggle-search" class="search-icon">
-            <i
-              class="fa-solid fa-magnifying-glass"
-              aria-label="Go to search bar"
-            ></i>
-          </label>
-          <div class="search-dropdown">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="search-input"
-              id="search-input"
-            />
-          </div>
-        </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
-      </div>
-    </header>
-    <main>
-      <h1>Your Cart</h1>
-      <div id="cart-items"></div>
-      <button class="cta-button" id="checkout-button">Pay Now</button>
-    </main>
-    <footer>
-      <div class="footer-container">
-        <div class="footer-column">
-          <h4>SHOP</h4>
-          <ul>
-            <li><a href="/html/women.html">Women's</a></li>
-            <li><a href="/html/men.html">Men's</a></li>
-            <li><a href="/html/jackets.html">All Jackets</a></li>
-            <li><a href="#">Gift Cards</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>HELP</h4>
-          <ul>
-            <li><a href="#">Live Chat</a></li>
-            <li><a href="#">Size Guide</a></li>
-            <li><a href="#">Shipping</a></li>
-            <li><a href="#">Order Status</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="/html/contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>ABOUT RAINYDAYS</h4>
-          <ul>
-            <li><a href="/html/about.html">About Us</a></li>
-            <li><a href="#">Find a Store</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>REPAIR AND CARE</h4>
-          <ul>
-            <li><a href="#">Repair</a></li>
-            <li><a href="#">Warranty</a></li>
-            <li><a href="#">Product Care</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>INFO</h4>
-          <ul>
-            <li>
-              <a href="/html/termsandconditions.html">Terms and Conditions</a>
-            </li>
-            <li><a href="/html/privacypolicy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>FOLLOW RAINYDAYS</h4>
-          <ul class="social-media-list">
-            <li>
-              <a href="#"
-                ><i class="fa-brands fa-square-instagram"></i> Instagram</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="subscribe">
-          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-          <form action="/html/subscribe_response.html">
-            <div class="form-group">
-              <input
-                type="email"
-                placeholder="name@example.com"
-                aria-label="Type in your email address"
-              />
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-          <p>
-            Sign up to our newsletter and receive monthly newsletters with
-            amazing offers! Be the first to know about new products and sales!
-          </p>
-        </div>
-
-        <div class="footer-logo">
+    <div class="wrapper">
+      <header>
+        <div class="header-logo">
           <a href="/index.html">
             <img
-              src="/images/logo/rainydays_logo_full.png"
-              alt="Rainydays Logo"
+              src="/images/logo/rainydays_logo_just_mountain.png"
+              alt="Rainydays mountain logo"
+          /></a>
+        </div>
+        <div class="menu">
+          <input type="checkbox" id="hamburger-menu" />
+          <label for="hamburger-menu"
+            ><i class="fa-solid fa-bars hamburger-menu" aria-label="Menu"></i
+          ></label>
+          <nav>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/jackets.html">Jackets</a></li>
+              <li><a href="/html/about.html">About</a></li>
+              <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <div class="search-container">
+            <input
+              type="checkbox"
+              id="toggle-search"
+              class="toggle-search-checkbox"
             />
+            <label for="toggle-search" class="search-icon">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                aria-label="Go to search bar"
+              ></i>
+            </label>
+            <div class="search-dropdown">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="search-input"
+                id="search-input"
+              />
+            </div>
+          </div>
+          <a href="/checkout/index.html" id="cart-icon">
+            <i
+              class="fa-solid fa-cart-shopping"
+              aria-label="Go to checkout"
+            ></i>
+            <span id="cart-count">0</span>
           </a>
         </div>
-      </div>
-    </footer>
+      </header>
+      <!-- Error message container -->
+      <div id="error-message" class="error-message"></div>
+      <main>
+        <h1>Your Cart</h1>
+        <div id="cart-items"></div>
+        <p id="total-price" class="total-price"></p>
+        <!-- Total price display -->
+        <button class="cta-button" id="checkout-button">Checkout</button>
+      </main>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-column">
+            <h4>SHOP</h4>
+            <ul>
+              <li><a href="/html/women.html">Women's</a></li>
+              <li><a href="/html/men.html">Men's</a></li>
+              <li><a href="/html/jackets.html">All Jackets</a></li>
+              <li><a href="#">Gift Cards</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>HELP</h4>
+            <ul>
+              <li><a href="#">Live Chat</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="/html/contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>ABOUT RAINYDAYS</h4>
+            <ul>
+              <li><a href="/html/about.html">About Us</a></li>
+              <li><a href="#">Find a Store</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>REPAIR AND CARE</h4>
+            <ul>
+              <li><a href="#">Repair</a></li>
+              <li><a href="#">Warranty</a></li>
+              <li><a href="#">Product Care</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>INFO</h4>
+            <ul>
+              <li>
+                <a href="/html/termsandconditions.html">Terms and Conditions</a>
+              </li>
+              <li><a href="/html/privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>FOLLOW RAINYDAYS</h4>
+            <ul class="social-media-list">
+              <li>
+                <a href="#"
+                  ><i class="fa-brands fa-square-instagram"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="subscribe">
+            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+            <form action="/html/subscribe_response.html">
+              <div class="form-group">
+                <input
+                  type="email"
+                  placeholder="name@example.com"
+                  aria-label="Type in your email address"
+                />
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+            <p>
+              Sign up to our newsletter and receive monthly newsletters with
+              amazing offers! Be the first to know about new products and sales!
+            </p>
+          </div>
+
+          <div class="footer-logo">
+            <a href="/index.html">
+              <img
+                src="/images/logo/rainydays_logo_full.png"
+                alt="Rainydays Logo"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
