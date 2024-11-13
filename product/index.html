@@ -8,15 +8,22 @@
       name="description"
       content="The Product Page for the women's Rain Slayer jacket of the Rainydays website. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/product.css" />
-    <script src="/js/product.js" defer></script>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>Rainydays | Women's Rain Slayer</title>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/cart.js" defer></script>
+    <script src="/js/product.js" defer></script>
+
+    <title>Rainydays | Product Page</title>
   </head>
   <body>
     <header>
@@ -63,28 +70,24 @@
             />
           </div>
         </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
+        <a href="/checkout/index.html" id="cart-icon">
+          <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
+          <span id="cart-count">0</span>
+        </a>
       </div>
     </header>
+    <!-- Error message container -->
+    <div id="error-message" class="error-message"></div>
     <main>
-      <a href="/checkout/index.html" id="cart-icon"
-        ><img src="cart-icon.png" alt="Cart" /><span id="cart-count">0</span>
-        <!-- to show the number of items in the cart --></a
-      >
-
       <div class="product-details">
         <h1 id="product-title">Product Title</h1>
         <div class="image-container">
           <img id="product-image" alt="Product Image" />
         </div>
         <p id="product-description">Description</p>
+        <hr />
         <p id="product-sizes">Sizes: Not available</p>
+        <hr />
         <p id="product-price">Price: 0 USD</p>
         <button class="cta-button" id="add-to-cart-button">Add to Cart</button>
       </div>
@@ -153,7 +156,7 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </li>
             <li>
               <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>

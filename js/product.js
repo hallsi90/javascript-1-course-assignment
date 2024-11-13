@@ -6,12 +6,11 @@ if (productData) {
   // Set the product information in the respective elements
   document.getElementById("product-title").innerText = productData.title;
   document.getElementById("product-image").src = productData.image.url;
-  document.getElementById("product-description").innerText =
-    productData.description;
-  document.getElementById("product-sizes").innerText = productData.sizes;
   document.getElementById(
     "product-price"
   ).innerText = `Price: ${productData.price} USD`;
+  document.getElementById("product-description").innerText =
+    productData.description;
 
   // Display sizes if available
   if (productData.sizes && productData.sizes.length > 0) {
@@ -22,32 +21,20 @@ if (productData) {
     document.getElementById("product-sizes").innerText = "Sizes: Not available";
   }
 } else {
-  alert("Product data not found!");
-}
-
-// Cart functions frome her on out
-
-// Function to add product to cart
-function addToCart(product) {
-  // Get current cart from local storage or initialize an empty array
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // Add the product to the cart array
-  cart.push(product);
-
-  // Store the updated cart back to local storage
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(`${product.title} has been added to your cart!`); // Alert user
+  // Redirect back to homepage if no product is found
+  window.location.href = "index.html";
 }
 
 // Event listener for Add to Cart button
-document.getElementById("add-to-cart-button").addEventListener("click", () => {
-  const product = {
-    title: document.getElementById("product-title").innerText,
-    price: document.getElementById("product-price").innerText,
-    imageUrl: document.getElementById("product-image").src,
-    sizes: document.getElementById("product-sizes").innerText,
-  };
-  addToCart(product);
-});
+const addToCartButton = document.getElementById("add-to-cart-button");
+if (addToCartButton) {
+  addToCartButton.addEventListener("click", () => {
+    const product = {
+      title: document.getElementById("product-title").innerText,
+      price: document.getElementById("product-price").innerText,
+      imageUrl: document.getElementById("product-image").src,
+      sizes: document.getElementById("product-sizes").innerText,
+    };
+    addToCart(product); // Calls addToCart function from cart.js
+  });
+}
