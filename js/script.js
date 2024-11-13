@@ -64,7 +64,7 @@ function displayProducts(products) {
     // Store the product data in the click event for later use
     productDiv.onclick = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
-      window.location.href = "/product/index.html"; // Redirect to product page
+      window.location.href = "product/index.html"; // Redirect to product page
     };
 
     productList.appendChild(productDiv);
