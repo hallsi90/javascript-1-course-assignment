@@ -8,13 +8,19 @@
       name="description"
       content="The thank you page for messaging Rainydays. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/response.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script src="/js/common.js" defer></script>
+
     <title>Rainydays | Thank You for Your Message</title>
   </head>
   <body>
@@ -62,15 +68,14 @@
             />
           </div>
         </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
+        <a href="/checkout/index.html" id="cart-icon">
+          <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
+          <span id="cart-count">0</span>
+        </a>
       </div>
     </header>
+    <!-- Error message container -->
+    <div id="error-message" class="error-message"></div>
     <main>
       <h1>Thank you for your message!</h1>
       <p>
@@ -141,7 +146,7 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </li>
             <li>
               <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
