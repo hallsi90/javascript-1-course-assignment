@@ -16,11 +16,16 @@ function displayCartItems() {
     const itemPrice = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
     totalPrice += itemPrice * item.quantity;
 
+    // Format the price for display
+    const formattedPrice = formatPrice(itemPrice * item.quantity);
+
     const itemDiv = document.createElement("div");
     itemDiv.className = "cart-item";
     itemDiv.innerHTML = `
       <div class="cart-item-left">
-        <img src="${item.imageUrl}" alt="${item.title}" class="cart-item-image">
+        <img src="${item.imageUrl}" alt="${
+      item.alt || item.title
+    }" class="cart-item-image">
         <h2 class="cart-item-title">${item.title}</h2>
       </div>
       <div class="cart-item-quantity">
@@ -28,17 +33,15 @@ function displayCartItems() {
         <span class="quantity-number">${item.quantity}</span>
         <button class="quantity-button" data-index="${index}" data-delta="1">+</button>
       </div>
-      <p class="cart-item-price">${(itemPrice * item.quantity).toFixed(
-        2
-      )} USD</p>
+      <p class="cart-item-price">${formattedPrice}</p>
     `;
     cartItemsContainer.appendChild(itemDiv);
   });
 
   // Display the total price
-  document.getElementById(
-    "total-price"
-  ).textContent = `Total: $${totalPrice.toFixed(2)} USD`;
+  document.getElementById("total-price").textContent = `Total: ${formatPrice(
+    totalPrice
+  )}`;
 
   // Add event listeners for quantity buttons
   document.querySelectorAll(".quantity-button").forEach((button) => {

@@ -6,11 +6,15 @@ if (productData) {
   // Set the product information in the respective elements
   document.getElementById("product-title").innerText = productData.title;
   document.getElementById("product-image").src = productData.image.url;
-  document.getElementById(
-    "product-price"
-  ).innerText = `Price: ${productData.price} USD`;
+  document.getElementById("product-image").alt =
+    productData.image.alt || productData.title;
   document.getElementById("product-description").innerText =
     productData.description;
+  // Format the price using formatPrice function from common.js
+  const formattedPrice = formatPrice(productData.price);
+  document.getElementById(
+    "product-price"
+  ).innerText = `Price: ${formattedPrice}`;
 
   // Display sizes if available
   if (productData.sizes && productData.sizes.length > 0) {

@@ -1,3 +1,5 @@
+/* This file is to be linked to every html file --> the cart count will be updated on every page and potential error or success messages will display on every page. Also the price will be correctly formatted on every page with product prices */
+
 // Function to update the cart count in the header
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -29,4 +31,12 @@ function displayMessage(message, type = "error") {
       messageContainer.style.display = "none";
     }, 3000);
   }
+}
+
+// Function to format price to USD and make sure there are two decimal numbers i the price
+function formatPrice(price) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(price);
 }

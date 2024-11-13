@@ -28,11 +28,11 @@ async function fetchProducts() {
     localStorage.setItem("allProducts", JSON.stringify(products));
     displayProducts(products); // Pass the data array to displayProducts
   } catch (error) {
-    displayMessage("No products available to display."); // Alert the user with in-page error message
+    displayMessage("Error fetching products: " + error.message); // Display error message
   } finally {
-    // Ensure that the loading message is removed only if it exists in the DOM
     if (productList.contains(loadingMessage)) {
       productList.removeChild(loadingMessage); // Remove loading indicator
+      loadingMessage = null; // Clear reference
     }
   }
 }
@@ -44,7 +44,7 @@ function displayProducts(products) {
 
   // Check if products is valid
   if (!products || !Array.isArray(products) || products.length === 0) {
-    displayMessage("Error fetching products: " + error.message); // Alert the user if no products are found with in-page error message
+    displayMessage("No products available to display."); // Alert the user if no products are found with in-page error message
     return; // Exit if products is undefined or empty
   }
 
@@ -52,13 +52,16 @@ function displayProducts(products) {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
 
+    // Format the price for display
+    const formattedPrice = formatPrice(product.price);
+
     // Display product information
     productDiv.innerHTML = `
-        <h3>${product.title}</h2>
+     <h3>${product.title}</h3>
         <div class="image-container">
-            <img src="${product.image.url}" alt="${product.title}">
+            <img src="${product.image.url}" alt="${product.image.alt}">
         </div>
-        <p>Price: ${product.price} USD</p>
+        <p>Price: ${formattedPrice}</p>
         `;
 
     // Store the product data in the click event for later use
@@ -82,7 +85,7 @@ function filterProducts(gender) {
 
   const filteredProducts = allProducts.filter((product) => {
     // Ensure the product has a gender property
-    return product.gender && product.gender.toLowerCase() === gender; // Adjust case sensitivity if necessary
+    return product.gender && product.gender.toLowerCase() === gender;
   });
 
   displayProducts(filteredProducts);

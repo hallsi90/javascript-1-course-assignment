@@ -23,10 +23,11 @@ async function fetchWomensJackets() {
 
     displayProducts(womensJackets);
   } catch (error) {
-    displayMessage("Error fetching products: " + error.message);
+    displayMessage("Error fetching women's jackets: " + error.message);
   } finally {
     if (productList.contains(loadingMessage)) {
-      productList.removeChild(loadingMessage);
+      productList.removeChild(loadingMessage); // Remove loading indicator
+      loadingMessage = null; // Clears the reference to free up memory
     }
   }
 }
@@ -43,15 +44,19 @@ function displayProducts(products) {
   products.forEach((product) => {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
-    productDiv.innerHTML = `
-      <h3>${product.title}</h3>
-      <div class="image-container">
-        <img src="${product.image.url}" alt="${product.title}">
-      </div>
-      <p>Price: ${product.price} USD</p>
-    `;
 
-    // Optionally, add functionality to navigate to the product page
+    // Format the price
+    const formattedPrice = formatPrice(product.price);
+
+    productDiv.innerHTML = `
+    <h3>${product.title}</h3>
+    <div class="image-container">
+      <img src="${product.image.url}" alt="${product.image.alt}">
+    </div>
+    <p>Price: ${formattedPrice}</p>
+  `;
+
+    // Functionality to navigate to the product page
     productDiv.onclick = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "product/index.html";

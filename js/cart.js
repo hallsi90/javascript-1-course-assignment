@@ -1,3 +1,5 @@
+/* This file is for the pages where you can add and/or remove a product to/from the cart */
+
 // Function to add product to cart
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -34,17 +36,6 @@ function updateCartQuantity(index, delta) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-  }
-}
-
-// Function to update cart count in the header
-function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
-
-  const cartCountElement = document.getElementById("cart-count");
-  if (cartCountElement) {
-    cartCountElement.textContent = cartCount;
   }
 }
 
