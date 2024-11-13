@@ -8,14 +8,21 @@
       name="description"
       content="The Home Page of the Rainydays website. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/jackets.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/index.js" defer></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/script.js" defer></script>
+
     <title>Rainydays | Home Page</title>
   </head>
   <body>
@@ -63,16 +70,14 @@
             />
           </div>
         </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
+        <a href="/checkout/index.html" id="cart-icon">
+          <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
+          <span id="cart-count">0</span>
+        </a>
       </div>
     </header>
-
+    <!-- Error message container -->
+    <div id="error-message" class="error-message"></div>
     <section>
       <div class="introduction-content-container">
         <div class="background top-image explore">
@@ -96,6 +101,7 @@
         </div>
       </div>
     </section>
+
     <main>
       <h2>Check out our amazing jackets</h2>
       <div id="filter-container">
@@ -172,7 +178,7 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </li>
             <li>
               <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
