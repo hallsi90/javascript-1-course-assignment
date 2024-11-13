@@ -6,8 +6,8 @@ async function fetchProducts() {
   const loadingMessage = document.createElement("div");
   loadingMessage.className = "loading";
   loadingMessage.innerHTML = `
-      <div class="spinner"></div>
-  `;
+        <div class="spinner"></div>
+    `;
   productList.appendChild(loadingMessage); // Show loading indicator
 
   try {
@@ -28,7 +28,7 @@ async function fetchProducts() {
     localStorage.setItem("allProducts", JSON.stringify(products));
     displayProducts(products); // Pass the data array to displayProducts
   } catch (error) {
-    alert("Error fetching products: " + error.message); // Alert the user
+    displayMessage("No products available to display."); // Alert the user with in-page error message
   } finally {
     // Ensure that the loading message is removed only if it exists in the DOM
     if (productList.contains(loadingMessage)) {
@@ -44,7 +44,7 @@ function displayProducts(products) {
 
   // Check if products is valid
   if (!products || !Array.isArray(products) || products.length === 0) {
-    alert("No products found"); // Alert the user if no products are found
+    displayMessage("Error fetching products: " + error.message); // Alert the user if no products are found with in-page error message
     return; // Exit if products is undefined or empty
   }
 
@@ -54,12 +54,12 @@ function displayProducts(products) {
 
     // Display product information
     productDiv.innerHTML = `
-    <h3>${product.title}</h3>
-    <div class="image-container">
-        <img src="${product.image.url}" alt="${product.title}">
-    </div>
-    <p>Price: ${product.price} USD</p>
-`;
+        <h3>${product.title}</h2>
+        <div class="image-container">
+            <img src="${product.image.url}" alt="${product.title}">
+        </div>
+        <p>Price: ${product.price} USD</p>
+        `;
 
     // Store the product data in the click event for later use
     productDiv.onclick = () => {
