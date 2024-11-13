@@ -6,16 +6,22 @@
     <meta name="author" content="Ingelinn Hallseth" />
     <meta
       name="description"
-      content="Thank you page for subscibing to the Rainydays newsletter. Rainydays is a company that sells premium quality rain jackets."
+      content="The Terms and Conditions Page for Rainydays. Rainydays is a company that sells premium quality rain jackets."
     />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/information.css" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>Rainydays | Thank You for Subscribing</title>
+
+    <script src="/js/common.js" defer></script>
+
+    <title>Rainydays | Terms & Conditions</title>
   </head>
   <body>
     <header>
@@ -62,15 +68,14 @@
             />
           </div>
         </div>
-        <a href="/checkout/index.html"
-          ><i
-            class="fa-solid fa-cart-shopping"
-            value="0"
-            aria-label="Go to checkout"
-          ></i
-        ></a>
+        <a href="/checkout/index.html" id="cart-icon">
+          <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
+          <span id="cart-count">0</span>
+        </a>
       </div>
     </header>
+    <!-- Error message container -->
+    <div id="error-message" class="error-message"></div>
     <main>
       <h1>Terms and Conditions</h1>
       <small>Last Updated: 27.10.2024</small>
@@ -251,7 +256,7 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+              <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </li>
             <li>
               <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
