@@ -54,7 +54,7 @@ function displayProducts(products) {
     // Optionally, add functionality to navigate to the product page
     productDiv.onclick = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
-      window.location.href = "product/index.html";
+      window.location.href = "/product/index.html";
     };
 
     productList.appendChild(productDiv);
