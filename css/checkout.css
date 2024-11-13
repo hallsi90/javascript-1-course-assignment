@@ -2,7 +2,10 @@ h1 {
   font-size: 2.6rem;
   text-align: center;
 }
-
+p {
+  font-size: 2rem;
+  text-align: center;
+}
 #cart-items {
   margin-top: 20px;
   display: flex;
