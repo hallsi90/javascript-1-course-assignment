@@ -66,7 +66,7 @@ function handleCheckout() {
 
   // Clear the cart and redirect to confirmation page
   localStorage.removeItem("cart");
-  window.location.href = "/checkout/confirmation/index.html";
+  window.location.href = "../checkout/confirmation/index.html";
 }
 
 // Add event listener for the checkout button
