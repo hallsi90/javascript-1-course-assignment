@@ -13,27 +13,21 @@ function updateCartCount() {
 
 // Listen for the custom cartUpdated event
 document.addEventListener("cartUpdated", updateCartCount);
-
-// Call this function on all pages initially to set the count on load
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
-// Function to display a message (success or error)
 function displayMessage(message, type = "error") {
   const messageContainer = document.getElementById("error-message");
   if (messageContainer) {
     messageContainer.textContent = message;
     messageContainer.style.display = "block";
-
-    // Add success or error class based on type
     messageContainer.className = type === "success" ? "success" : "error";
-
     setTimeout(() => {
       messageContainer.style.display = "none";
     }, 3000);
   }
 }
 
-// Function to format price to USD and make sure there are two decimal numbers i the price
+// Function to format price to USD
 function formatPrice(price) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
