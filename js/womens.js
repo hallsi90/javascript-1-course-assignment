@@ -45,15 +45,24 @@ function displayProducts(products) {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
 
-    // Format the price
+    // Format the prices
     const formattedPrice = formatPrice(product.price);
+    const formattedDiscountedPrice = formatPrice(product.discountedPrice);
 
     productDiv.innerHTML = `
     <h3>${product.title}</h3>
     <div class="image-container">
       <img src="${product.image.url}" alt="${product.image.alt}">
     </div>
-    <p>Price: ${formattedPrice}</p>
+    ${
+      product.onSale
+        ? `<div class="price-wrapper">
+             <p class="discounted-price">${formattedDiscountedPrice}</p>
+             <p class="original-price">${formattedPrice}</p>
+             <span class="on-sale-badge">On Sale</span>
+           </div>`
+        : `<p class="price">${formattedPrice}</p>`
+    }
   `;
 
     // Functionality to navigate to the product page
