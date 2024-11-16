@@ -13,11 +13,16 @@ function displayCartItems() {
   let totalPrice = 0;
 
   cart.forEach((item, index) => {
-    const itemPrice = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+    const itemPrice = item.onSale
+      ? parseFloat(item.discountedPrice)
+      : parseFloat(item.price); // Ensure prices are parsed as numbers
     totalPrice += itemPrice * item.quantity;
 
-    // Format the price for display
+    // Format the prices for display
     const formattedPrice = formatPrice(itemPrice * item.quantity);
+    const formattedOriginalPrice = item.onSale
+      ? formatPrice(parseFloat(item.price) * item.quantity)
+      : null;
 
     const itemDiv = document.createElement("div");
     itemDiv.className = "cart-item";
@@ -33,7 +38,15 @@ function displayCartItems() {
         <span class="quantity-number">${item.quantity}</span>
         <button class="quantity-button" data-index="${index}" data-delta="1">+</button>
       </div>
-      <p class="cart-item-price">${formattedPrice}</p>
+      <div class="cart-item-price-wrapper">
+        ${
+          item.onSale
+            ? `<p class="discounted-price">${formattedPrice}</p>
+               <p class="original-price">${formattedOriginalPrice}</p>
+               <span class="on-sale-badge">On Sale</span>`
+            : `<p class="cart-item-price">${formattedPrice}</p>`
+        }
+      </div>
     `;
     cartItemsContainer.appendChild(itemDiv);
   });
@@ -67,9 +80,25 @@ function handleCheckout() {
     return;
   }
 
-  // Clear the cart and redirect to confirmation page
-  localStorage.removeItem("cart");
-  window.location.href = "./confirmation/index.html";
+  // Show the processing message
+  const processingMessage = document.getElementById("processing-message");
+
+  // Check if the processing message element exists
+  if (processingMessage) {
+    processingMessage.style.display = "flex"; // Display the processing message
+    processingMessage.focus(); // Move focus to the processing message for accessibility
+  } else {
+    console.error(
+      "Processing message element with ID '#processing-message' not found in DOM."
+    );
+  }
+
+  // Simulate processing delay before redirection
+  const redirectDelay = 2500; // Delay in milliseconds
+  setTimeout(() => {
+    localStorage.removeItem("cart"); // Clear the cart
+    window.location.href = "./confirmation/index.html"; // Redirect to confirmation page
+  }, redirectDelay); // Allows flexibility for the delay time
 }
 
 // Add event listener for the checkout button
