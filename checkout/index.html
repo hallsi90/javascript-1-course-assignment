@@ -17,7 +17,6 @@
     <script src="../js/common.js" defer></script>
     <script src="../js/cart.js" defer></script>
     <script src="../js/checkout.js" defer></script>
-
     <script
       src="https://kit.fontawesome.com/bf1267e431.js"
       crossorigin="anonymous"
@@ -45,7 +44,7 @@
               <li><a href="../index.html">Home</a></li>
               <li><a href="../jackets.html">Jackets</a></li>
               <li><a href="../about.html">About</a></li>
-              <li><a href="../contact.html">Contact</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -88,6 +87,17 @@
         <p id="total-price" class="total-price"></p>
         <!-- Total price display -->
         <button class="cta-button" id="checkout-button">Checkout</button>
+        <!-- Spinner and Processing Message -->
+        <div
+          id="processing-message"
+          class="processing-message"
+          role="alert"
+          aria-live="polite"
+          tabindex="-1"
+        >
+          <p>Processing your order...</p>
+          <div class="spinner" aria-hidden="true"></div>
+        </div>
       </main>
       <footer>
         <div class="footer-container">
@@ -110,7 +120,7 @@
               <li><a href="#">Order Status</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Help Center</a></li>
-              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
 
@@ -173,7 +183,7 @@
         <div class="footer-bottom">
           <div class="subscribe">
             <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-            <form action="../subscribe_response.html">
+            <form action="../#">
               <div class="form-group">
                 <input
                   type="email"
