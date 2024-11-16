@@ -17,7 +17,7 @@ ul {
   font-size: 1.2rem;
 }
 a {
-  color: var(--hamburger-menu-list-color);
+  color: var(--design-detail-color-light);
 }
 
 @media screen and (min-width: 450px) {

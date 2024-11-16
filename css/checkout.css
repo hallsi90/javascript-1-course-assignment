@@ -1,12 +1,21 @@
+/* STYLES FOR THE CHECKOUT PAGE */
+
+main {
+  margin-bottom: 0;
+}
+
 h1 {
   font-size: 2.6rem;
   text-align: center;
 }
 
+/* On the checkout page this p style is for the "your cart is empty message" */
 p {
   font-size: 2rem;
   text-align: center;
 }
+
+/******** CART STYLING ********/
 
 #cart-items {
   margin-top: 20px;
@@ -18,47 +27,51 @@ p {
 .cart-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 5px;
+  align-items: center; /* Ensures all child elements align properly */
+  padding: 5px 10px;
   border-bottom: 1px solid var(--design-details-color);
   background-color: var(--main-white-color);
   border-radius: 8px;
 }
 
-/* Left part of the cart item with image and title */
+/* LEFT SECTION FOR IMAGE AND TITLE */
+
 .cart-item-left {
   display: flex;
   align-items: center;
-  width: 60%; /* Set a fixed width for consistency */
+  flex: 1;
 }
 
 .cart-item-image {
   width: 50px;
   height: auto;
   margin-right: 10px;
-  border-radius: 5px;
 }
 
 .cart-item-title {
   color: var(--main-blue-color);
   font-size: 1.2rem;
   font-weight: bold;
-  overflow: hidden;
+  overflow: hidden; /* Ensures overflow doesn't break the layout */
+  white-space: normal; /* Allows wrapping */
+  text-overflow: ellipsis; /* In case some titles are still too long after wrapping */
 }
 
-/* Quantity control section */
+/* MIDDLE SECTION FOR QUANTITY NUMBER AND BUTTONS */
+
 .cart-item-quantity {
   display: flex;
   align-items: center;
   gap: 2px;
   width: 80px; /* Fixed width for consistent alignment */
   justify-content: center;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .quantity-button {
   width: 20px;
   height: 20px;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: var(--main-white-color);
   background-color: var(--design-details-color);
   border: none;
@@ -68,6 +81,7 @@ p {
 
 .quantity-button:hover {
   background-color: var(--main-blue-color);
+  transition: ease-in-out 200ms;
 }
 
 .quantity-number {
@@ -76,16 +90,52 @@ p {
   font-weight: bold;
 }
 
-/* Item price styling */
+/* RIGHT SECTION FOR PRICE AND ON SALE BADGE */
+
+.cart-item-price-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px; /* Reduced spacing for tighter grouping */
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Item price styling for non-sale products */
 .cart-item-price {
   color: var(--main-blue-color);
   font-size: 1.4rem;
   font-weight: bold;
-  text-align: right;
-  width: 110px; /* Fixed width for alignment */
   white-space: nowrap; /* Prevents USD from wrapping to a new line */
-  padding-right: 5px; /* Optional padding for extra spacing */
 }
+
+/* Item styling for on sale pale products - price and on sale badge */
+
+.discounted-price {
+  color: green;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.original-price {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.on-sale-badge {
+  background-color: red;
+  color: white;
+  font-size: 1.2rem;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+/******** BOTTOM SECTION OF PAGE STYLING ********/
 
 /* Total price styling */
 .total-price {
@@ -93,9 +143,12 @@ p {
   font-weight: bold;
   text-align: right;
   margin-top: 20px;
+  margin-bottom: 30px;
   padding-top: 10px;
   border-top: 2px solid var(--design-details-color);
 }
+
+/* Checkout button styling */
 
 .cta-button {
   color: var(--main-blue-color);
@@ -105,7 +158,7 @@ p {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  margin: 30px auto;
+  margin: 0 auto;
   display: flex;
   border: none;
   box-shadow: 5px 5px 5px black;
@@ -117,49 +170,177 @@ p {
   transition: ease-in-out 200ms;
 }
 
-@media screen and (min-width: 600px) {
+/******** PROCESSING MESSAGE AND SPINNER ********/
+
+.processing-message {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 54, 65, 0.9); /* Semi-transparent background */
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1000; /* Ensures it appears on top */
+  flex-direction: column; /* Stack spinner and text vertically */
+}
+
+/* Spinner from https://cssloaders.github.io/ */
+.spinner {
+  color: var(--design-details-color-light); /* Sets the spinner's color */
+  font-size: 1rem; /* Sets the size of the spinner */
+  width: 1em; /* Sets the width */
+  height: 1em; /* Sets the height */
+  border-radius: 50%; /* Makes the spinner circular */
+  position: relative; /* Positions the spinner relative to its parent */
+  text-indent: -9999em; /* Hides text content (for accessibility) */
+  animation: mulShdSpin 1.3s infinite linear; /* Applies spinning animation */
+  transform: translateZ(0); /* Improves rendering performance */
+  margin-top: 20px;
+}
+
+/* Spinner animation */
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+/******** CHECKOUT PAGE MEDIA QUERIES ********/
+
+@media screen and (min-width: 500px) {
   h1 {
     font-size: 4.8rem;
-    text-align: center;
-  }
-  .cart-item-quantity {
-    gap: 5px;
-  }
-  .cart-item-title,
-  .quantity-number,
-  .cart-item-price {
-    font-size: 1.5rem;
-  }
-
-  .total-price {
-    font-size: 2.2rem;
-    border-top: 3px solid var(--design-details-color);
   }
 
   .cart-item {
     padding: 10px;
   }
+
+  .cart-item-image {
+    width: 60px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 90px;
+  }
+
+  .cart-item-title,
+  .quantity-number,
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
+    font-size: 1.8rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.5rem;
+  }
+
   .quantity-button {
     width: 25px;
     height: 25px;
-    font-size: 18px;
+  }
+
+  .cart-item-quantity {
+    gap: 4px;
+  }
+
+  .total-price {
+    font-size: 2.5rem;
+    border-top: 3px solid var(--design-details-color);
   }
 
   .cta-button {
-    padding: 10px 100px 10px 100px;
+    padding: 10px 100px;
     font-size: 3rem;
     margin: 70px auto;
   }
+
+  .processing-message {
+    font-size: 3rem;
+  }
+
+  .spinner {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 700px) {
   .cart-item-image {
     width: 70px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 110px;
   }
 }
 
 @media screen and (min-width: 800px) {
+  p {
+    font-size: 2.5rem;
+  }
+
+  .cart-item {
+    padding: 15px;
+  }
+
+  .cart-item-image {
+    width: 80px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 120px;
+  }
+
   .cart-item-title,
   .quantity-number,
-  .cart-item-price {
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
     font-size: 2rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.8rem;
   }
 
   .total-price {
@@ -167,23 +348,60 @@ p {
     border-top: 4px solid var(--design-details-color);
   }
 
-  .cart-item-image {
-    width: 80px;
-  }
-
-  .cart-item-left {
-    width: 50%; /* Set a fixed width for consistency */
+  .cta-button {
+    padding: 15px 150px;
+    font-size: 4rem;
   }
 }
+@media screen and (min-width: 1000px) {
+  .cart-item {
+    padding: 20px;
+  }
 
-@media screen and (min-width: 1024px) {
   .cart-item-image {
     width: 90px;
   }
 
+  .cart-item-price-wrapper {
+    width: 130px;
+  }
+
+  .cart-item-title,
+  .quantity-number,
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
+    font-size: 2.5rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 2.3rem;
+  }
+
+  .quantity-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .total-price {
+    font-size: 4rem;
+    border-top: 6px solid var(--design-details-color);
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
   .cta-button {
     padding: 20px 200px;
+    font-size: 5rem;
+  }
+
+  .processing-message {
     font-size: 4rem;
-    margin: 70px auto;
+  }
+
+  .spinner {
+    font-size: 2rem;
+    margin-top: 40px;
   }
 }

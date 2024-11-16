@@ -20,6 +20,7 @@ a {
 img {
   width: 100%;
 }
+
 /***     MAKE SURE THE FOOTER IS PUSHED TO THE BOTTOM OF THE PAGE WHEN LITTLE CONTENT ON PAGE     USED ON JACKETS, MEN, WOMEN, CHECKOUT     ***/
 /* div class wrapped around entire body*/
 
@@ -97,7 +98,7 @@ nav ul {
 nav li {
   display: block;
   padding: 10px 20px;
-  background-color: var(--hamburger-menu-list-color);
+  background-color: var(--design-detail-color-light);
 }
 
 nav a {
@@ -302,7 +303,7 @@ form {
     padding-left: 2px;
   }
   nav li {
-    border: 2px solid var(--hamburger-menu-list-color);
+    border: 2px solid var(--design-detail-color-light);
   }
   /* MEDIA QUERY FOOTER */
   .footer-container {

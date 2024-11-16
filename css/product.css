@@ -40,7 +40,7 @@ h1 {
 
 #product-price {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .cta-button {
@@ -70,6 +70,40 @@ hr {
   margin-bottom: 20px;
 }
 
+/* ON SALE PRICES AND BADGES FOR SINGLE PRODUCT*/
+
+.discounted-price {
+  color: green;
+  font-weight: bold;
+  font-size: 2.5rem; /* Adjust font size if needed */
+  margin-top: 0px;
+  margin-bottom: 0; /* Remove margin below the discounted price */
+}
+
+.original-price {
+  color: lightgray;
+  text-decoration: line-through;
+  font-size: 2rem; /* Slightly smaller than the discounted price */
+  margin-top: 0; /* Remove margin above the original price */
+  margin-bottom: 2px;
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Controls the spacing between the two prices and the on sale badge */
+  align-items: center; /* Align prices to the left */
+}
+
+.on-sale-badge {
+  background-color: red;
+  color: white;
+  font-size: 2rem; /* Slightly larger font for better visibility */
+  padding: 4px 8px; /* Adjust padding for size */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 10px;
+}
+
 @media screen and (min-width: 450px) {
   h1 {
     font-size: 4.8rem;
@@ -80,8 +114,14 @@ hr {
     font-size: 1.8rem;
   }
 
-  #product-price {
-    font-size: 2.2rem;
+  #product-price,
+  .discounted-price {
+    font-size: 3rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 2.5rem;
   }
 
   .cta-button {
@@ -107,8 +147,18 @@ hr {
     font-size: 2rem;
   }
 
-  #product-price {
-    font-size: 2.5rem;
+  #product-price,
+  .discounted-price {
+    font-size: 4rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 3rem;
+  }
+
+  .price-wrapper {
+    gap: 20px; /* Controls the spacing between the two prices and the on sale badge */
   }
 
   .cta-button {

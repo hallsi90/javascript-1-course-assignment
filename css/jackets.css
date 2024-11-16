@@ -4,6 +4,7 @@ h1 {
   text-align: center;
   color: var(--main-white-color);
 }
+
 h2 {
   font-size: 3rem;
   text-align: center;
@@ -78,57 +79,34 @@ p {
   transition: transform 0.2s; /* Smooth transition effect */
 }
 
-.loading {
-  display: flex; /* Enables flexbox layout */
-  justify-content: center; /* Centers the spinner horizontally */
-  align-items: center; /* Centers the spinner vertically */
-  height: 100px; /* Sets the height of the loading area */
+/* ON SALE PRICES AND BADGES FOR LISTS OF PRODUCTS */
+
+.discounted-price {
+  color: green;
+  font-weight: bold;
+  font-size: 1.8rem; /* Adjust font size if needed */
+  margin-bottom: 0; /* Remove margin below the discounted price */
 }
 
-.spinner {
-  color: #5b7880; /* Sets the spinner's color */
-  font-size: 10px; /* Sets the size of the spinner */
-  width: 1em; /* Sets the width */
-  height: 1em; /* Sets the height */
-  border-radius: 50%; /* Makes the spinner circular */
-  position: relative; /* Positions the spinner relative to its parent */
-  text-indent: -9999em; /* Hides text content (for accessibility) */
-  animation: mulShdSpin 1.3s infinite linear; /* Applies spinning animation */
-  transform: translateZ(0); /* Improves rendering performance */
+.original-price {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 1.4rem; /* Slightly smaller than the discounted price */
+  margin-top: 0; /* Remove margin above the original price */
+  margin-bottom: 2px;
 }
 
-@keyframes mulShdSpin {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
-      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
-      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-  }
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-  }
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Controls the spacing between the two prices */
+  align-items: center; /* Align prices to the left */
+}
+
+.on-sale-badge {
+  background-color: red;
+  color: white;
+  font-size: 1.4rem; /* Slightly larger font for better visibility */
+  padding: 4px 8px; /* Adjust padding for size */
+  border-radius: 5px; /* Rounded corners */
 }
