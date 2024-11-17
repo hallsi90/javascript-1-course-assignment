@@ -1,3 +1,5 @@
+/* JavaScript for the Checkout Page showing items in cart */
+
 // Function to display cart items
 function displayCartItems() {
   const cartItemsContainer = document.getElementById("cart-items");
