@@ -13,8 +13,10 @@ function updateCartCount() {
 
 // Listen for the custom cartUpdated event
 document.addEventListener("cartUpdated", updateCartCount);
+// Call this function on all pages initially to set the count on load
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
+// Function to display a message (success or error)
 function displayMessage(message, type = "error") {
   const messageContainer = document.getElementById("error-message");
   if (messageContainer) {
