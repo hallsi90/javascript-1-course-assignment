@@ -42,7 +42,7 @@ if (productData) {
   }
 
   // Display the base color
-  document.getElementById("product-base-color").innerText = `Base Color: ${
+  document.getElementById("product-base-color").innerText = `Color: ${
     productData.baseColor || "Not specified"
   }`;
 } else {
