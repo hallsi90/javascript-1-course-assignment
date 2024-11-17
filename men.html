@@ -59,15 +59,24 @@
           </a>
         </div>
       </header>
+
       <!-- Error message container -->
       <div id="error-message" class="error-message" aria-live="polite"></div>
+
       <main>
         <h1>Shop Men's Jackets</h1>
+        <div
+          id="spinner"
+          class="spinner"
+          aria-hidden="true"
+          style="display: none"
+        ></div>
         <div id="product-list">
           <!-- Fallback message if js is disabled in a browser -->
           <p>Loading men's jackets...</p>
         </div>
       </main>
+
       <footer>
         <div class="footer-container">
           <div class="footer-column">
