@@ -1,3 +1,5 @@
+/* STYLES FOR THE PRODUCT PAGE */
+
 h1 {
   font-size: 2.6rem;
   margin-bottom: 20px;
@@ -11,6 +13,7 @@ h1 {
   align-items: center;
   overflow: hidden; /* Hide overflow if necessary */
   flex-grow: 1;
+  margin: auto;
 }
 
 #product-image {
@@ -31,86 +34,75 @@ h1 {
 
 #product-description {
   font-size: 1.5rem;
+  line-height: 1.6;
 }
 
-#product-sizes {
+#product-sizes,
+#product-base-color {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+/* REGULAR PRICES, ON SALE PRICES AND BADGES FOR SINGLE PRODUCT */
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Regular non-sale price*/
 #product-price {
   font-weight: bold;
   font-size: 2.5rem;
 }
 
-.cta-button {
-  color: var(--main-blue-color);
+.discounted-price {
+  color: var(--discounted-price-color);
   background-color: var(--main-white-color);
-  padding: 10px 50px;
-  font-size: 2rem;
+  padding: 20px;
+  border-radius: 50px;
   font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 30px auto;
-  display: flex;
-  border: none;
-  box-shadow: 5px 5px 5px black;
+  font-size: 2.5rem;
+  margin-top: 0px;
+  margin-bottom: 0;
 }
 
-.cta-button:hover {
+.original-price {
+  color: lightgray;
+  text-decoration: line-through;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.on-sale-badge {
+  background-color: var(--on-sale-badge-color);
   color: var(--main-white-color);
-  background-color: var(--main-blue-color);
-  border: 2px solid var(--main-white-color);
-  transition: ease-in-out 200ms;
+  font-size: 2rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 hr {
   border: 1px solid var(--design-details-color);
   margin-top: 20px;
   margin-bottom: 20px;
+  max-width: 1200px;
 }
 
-/* ON SALE PRICES AND BADGES FOR SINGLE PRODUCT*/
-
-.discounted-price {
-  color: green;
-  font-weight: bold;
-  font-size: 2.5rem; /* Adjust font size if needed */
-  margin-top: 0px;
-  margin-bottom: 0; /* Remove margin below the discounted price */
-}
-
-.original-price {
-  color: lightgray;
-  text-decoration: line-through;
-  font-size: 2rem; /* Slightly smaller than the discounted price */
-  margin-top: 0; /* Remove margin above the original price */
-  margin-bottom: 2px;
-}
-
-.price-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Controls the spacing between the two prices and the on sale badge */
-  align-items: center; /* Align prices to the left */
-}
-
-.on-sale-badge {
-  background-color: red;
-  color: white;
-  font-size: 2rem; /* Slightly larger font for better visibility */
-  padding: 4px 8px; /* Adjust padding for size */
-  border-radius: 5px; /* Rounded corners */
-  margin-bottom: 10px;
-}
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 450px) {
   h1 {
-    font-size: 4.8rem;
+    font-size: 3rem;
   }
 
   #product-description,
-  #product-sizes {
+  #product-sizes,
+  #product-base-color {
     font-size: 1.8rem;
   }
 
@@ -124,26 +116,19 @@ hr {
     font-size: 2.5rem;
   }
 
-  .cta-button {
-    padding: 10px 80px;
-    font-size: 3rem;
-  }
-
   hr {
     border: 2px solid var(--design-details-color);
   }
 }
+
 @media screen and (min-width: 600px) {
   main {
     margin: 50px;
   }
 
-  .image-container {
-    margin: 30px 0px;
-  }
-
   #product-description,
-  #product-sizes {
+  #product-sizes,
+  #product-base-color {
     font-size: 2rem;
   }
 
@@ -158,11 +143,12 @@ hr {
   }
 
   .price-wrapper {
-    gap: 20px; /* Controls the spacing between the two prices and the on sale badge */
+    gap: 20px;
   }
+}
 
-  .cta-button {
-    padding: 10px 100px;
-    font-size: 4rem;
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4.8rem;
   }
 }
