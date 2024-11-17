@@ -33,6 +33,58 @@ img {
   width: 100%;
 }
 
+/* Spinner from https://cssloaders.github.io/ with small alterations*/
+.spinner {
+  color: var(--design-details-color-light); /* Spinner color */
+  font-size: 1rem; /* Larger size for visibility */
+  width: 1em; /* Larger width */
+  height: 1em; /* Larger height */
+  border-radius: 50%; /* Circular spinner */
+  position: relative; /* Relative to its container */
+  animation: mulShdSpin 1.3s infinite linear; /* Spinning animation */
+  transform: translateZ(0); /* Enhance performance */
+  display: block; /* Ensure it’s visible */
+  margin: 50px auto; /* Center it horizontally with some spacing */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Spinner animation */
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
 /* CTA BUTTONS (add to cart and checkout) */
 
 .cta-button {
@@ -230,6 +282,11 @@ footer li {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 500px) {
+  .spinner {
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+
   .cta-button {
     padding: 10px 80px;
     font-size: 3rem;
@@ -363,6 +420,11 @@ footer li {
 }
 
 @media screen and (min-width: 1023px) {
+  .spinner {
+    font-size: 2rem;
+    margin-top: 70px;
+  }
+
   /* MEDIA QUERY HEADER */
   nav li {
     padding: 10px 30px;
