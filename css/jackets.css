@@ -1,14 +1,15 @@
-/* NEW STYLES FOR THE JAVASCRIPT 1 COURSE ASSIGNMENT */
+/* STYLES FOR JACKET LISTS ON INDEX, JACKETS, MEN'S AND WOMEN'S PAGES */
+
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
   color: var(--main-white-color);
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -17,22 +18,29 @@ h3 {
   text-align: center;
 }
 
-p {
-  color: var(--main-blue-color);
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
 #filter-container {
-  text-align: center; /* Center the filter */
-  margin-bottom: 20px; /* Space between filter and products */
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 #gender-filter {
   padding: 8px;
   width: 200px; /* Match the width of the product cards */
-  border: 1px solid #ddd; /* Optional: to match product cards */
-  border-radius: 4px; /* Optional: rounded corners */
+  border: 1px solid var(--design-details-color-light);
+  border-radius: 4px;
+}
+
+/* Hides the gender filter label visually but keeps it accessible for screen readers:*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 #product-list {
@@ -46,14 +54,13 @@ p {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center align all items */
-  border: 1px solid #ddd;
+  border: 1px solid var(--design-details-color-light);
   border-radius: 8px;
   padding: 16px;
-  background-color: white;
+  background-color: var(--main-white-color);
   width: 200px;
   text-align: center;
-  margin-bottom: 20px; /* Add space between products */
-  height: 350px; /* Set a fixed height for the product container */
+  height: 350px;
   box-sizing: border-box; /* Ensure padding and border are included in the width/height */
 }
 
@@ -77,36 +84,151 @@ p {
 .product:hover {
   transform: scale(1.02); /* Slightly enlarge the product card on hover */
   transition: transform 0.2s; /* Smooth transition effect */
+  cursor: pointer;
 }
 
 /* ON SALE PRICES AND BADGES FOR LISTS OF PRODUCTS */
 
-.discounted-price {
-  color: green;
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+/* Regular non-sale price */
+p {
+  color: var(--main-blue-color);
+  font-size: 1.8rem;
   font-weight: bold;
-  font-size: 1.8rem; /* Adjust font size if needed */
-  margin-bottom: 0; /* Remove margin below the discounted price */
+}
+
+.discounted-price {
+  color: var(--discounted-price-color);
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 0;
 }
 
 .original-price {
   color: grey;
   text-decoration: line-through;
-  font-size: 1.4rem; /* Slightly smaller than the discounted price */
-  margin-top: 0; /* Remove margin above the original price */
-  margin-bottom: 2px;
-}
-
-.price-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2px; /* Controls the spacing between the two prices */
-  align-items: center; /* Align prices to the left */
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 3px;
 }
 
 .on-sale-badge {
-  background-color: red;
-  color: white;
-  font-size: 1.4rem; /* Slightly larger font for better visibility */
-  padding: 4px 8px; /* Adjust padding for size */
-  border-radius: 5px; /* Rounded corners */
+  background-color: var(--on-sale-badge-color);
+  color: var(--main-white-color);
+  font-size: 1.4rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  #filter-container {
+    margin-bottom: 30px;
+  }
+
+  p,
+  .discounted-price {
+    font-size: 2rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  #filter-container {
+    margin-bottom: 40px;
+  }
+
+  .price-wrapper {
+    gap: 5px;
+  }
+
+  p,
+  .discounted-price {
+    font-size: 2.2rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.8rem;
+  }
+
+  #product-list {
+    margin-bottom: 80px;
+  }
+
+  .product {
+    width: 250px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  p,
+  .discounted-price {
+    font-size: 2.5rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 2rem;
+  }
+
+  .product {
+    width: 300px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  p,
+  .discounted-price {
+    font-size: 3rem;
+  }
+
+  #product-list {
+    margin-bottom: 100px;
+  }
 }

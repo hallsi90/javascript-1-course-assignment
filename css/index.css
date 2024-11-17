@@ -1,4 +1,4 @@
-/***     INTRODUCTION SECTION STYLES OF THE INDEX PAGE     ***/
+/* STYLING FOR THE INTRODUCTION SECTION OF THE HOME PAGE */
 
 section {
   margin-bottom: 40px;
@@ -130,7 +130,7 @@ section {
   z-index: 1; /* Ensure the overlay is below the h1 */
 }
 
-/* MEDIA SCREENS */
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 375px) {
   .background h1 {
