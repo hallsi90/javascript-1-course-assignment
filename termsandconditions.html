@@ -41,33 +41,13 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="jackets.html">Jackets</a></li>
+            <li><a href="women.html">Women's</a></li>
+            <li><a href="men.html">Men's</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#">Contact</a></li>
           </ul>
         </nav>
       </div>
       <div class="icons">
-        <div class="search-container">
-          <input
-            type="checkbox"
-            id="toggle-search"
-            class="toggle-search-checkbox"
-          />
-          <label for="toggle-search" class="search-icon">
-            <i
-              class="fa-solid fa-magnifying-glass"
-              aria-label="Go to search bar"
-            ></i>
-          </label>
-          <div class="search-dropdown">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="search-input"
-              id="search-input"
-            />
-          </div>
-        </div>
         <a href="checkout/index.html" id="cart-icon">
           <i class="fa-solid fa-cart-shopping" aria-label="Go to checkout"></i>
           <span id="cart-count">0</span>
@@ -75,7 +55,7 @@
       </div>
     </header>
     <!-- Error message container -->
-    <div id="error-message" class="error-message"></div>
+    <div id="error-message" class="error-message" aria-live="polite"></div>
     <main>
       <h1>Terms and Conditions</h1>
       <small>Last Updated: 27.10.2024</small>
@@ -128,8 +108,8 @@
       <ul>
         <li>
           <strong>Return Policy:</strong> If you’re not satisfied with your
-          purchase, you may return items within [X days] of receipt, provided
-          they are unused and in original packaging.
+          purchase, you may return items within 30 of receipt, provided they are
+          unused and in original packaging.
         </li>
         <li>
           <strong>Refunds:</strong> Approved refunds will be processed to your
@@ -275,24 +255,6 @@
       </div>
 
       <div class="footer-bottom">
-        <div class="subscribe">
-          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-          <form action="#">
-            <div class="form-group">
-              <input
-                type="email"
-                placeholder="name@example.com"
-                aria-label="Type in your email address"
-              />
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-          <p>
-            Sign up to our newsletter and receive monthly newsletters with
-            amazing offers! Be the first to know about new products and sales!
-          </p>
-        </div>
-
         <div class="footer-logo">
           <a href="index.html">
             <img
