@@ -1,15 +1,9 @@
+/* JavaScript for all products with gender filtering all, male and female --> used on the index and jackets page */
+
 const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 
 // Function to fetch products from the API
 async function fetchProducts() {
-  const productList = document.getElementById("product-list");
-  const loadingMessage = document.createElement("div");
-  loadingMessage.className = "loading";
-  loadingMessage.innerHTML = `
-        <div class="spinner"></div>
-    `;
-  productList.appendChild(loadingMessage); // Show loading indicator
-
   try {
     const response = await fetch(apiUrl);
 
@@ -24,11 +18,6 @@ async function fetchProducts() {
     displayProducts(products); // Pass the data array to displayProducts
   } catch (error) {
     displayMessage("Error fetching products: " + error.message); // Display error message
-  } finally {
-    if (productList.contains(loadingMessage)) {
-      productList.removeChild(loadingMessage); // Remove loading indicator
-      loadingMessage = null; // Clear reference
-    }
   }
 }
 
@@ -49,9 +38,9 @@ function displayProducts(products) {
 
     // Format the price and check if product is on sale
     const formattedPrice = formatPrice(product.price);
-    const formattedDiscountedPrice = product.onSale
+    const formattedDiscountedPrice = product.discountedPrice
       ? formatPrice(product.discountedPrice)
-      : formattedPrice;
+      : formattedPrice; // Use normal price if discounted price is missing
 
     // Build the HTML for the product display
     productDiv.innerHTML = `
@@ -73,7 +62,7 @@ function displayProducts(products) {
     // Functionality to navigate to the product page
     productDiv.onclick = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
-      window.location.href = "product/index.html";
+      window.location.href = "product/index.html"; // Redirect to product page
     };
 
     productList.appendChild(productDiv);
