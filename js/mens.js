@@ -1,12 +1,8 @@
+/* JavaScript for the only men's jackets page */
+
 const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 
 async function fetchMensJackets() {
-  const productList = document.getElementById("product-list");
-  const loadingMessage = document.createElement("div");
-  loadingMessage.className = "loading";
-  loadingMessage.innerHTML = `<div class="spinner"></div>`;
-  productList.appendChild(loadingMessage);
-
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
@@ -24,19 +20,16 @@ async function fetchMensJackets() {
     displayProducts(mensJackets);
   } catch (error) {
     displayMessage("Error fetching men's jackets: " + error.message);
-  } finally {
-    if (productList.contains(loadingMessage)) {
-      productList.removeChild(loadingMessage); // Remove loading indicator
-      loadingMessage = null; // Clears the reference to free up memory
-    }
   }
 }
 
+// Function to display products
 function displayProducts(products) {
   const productList = document.getElementById("product-list");
-  productList.innerHTML = "";
+  productList.innerHTML = ""; // Clear the product list before displaying new products
 
-  if (!products || products.length === 0) {
+  // Check if products is valid
+  if (!products || !Array.isArray(products) || products.length === 0) {
     displayMessage("No men's jackets found.");
     return;
   }
@@ -45,10 +38,13 @@ function displayProducts(products) {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
 
-    // Format the prices
+    // Format the price and check if product is on sale
     const formattedPrice = formatPrice(product.price);
-    const formattedDiscountedPrice = formatPrice(product.discountedPrice);
+    const formattedDiscountedPrice = product.discountedPrice
+      ? formatPrice(product.discountedPrice)
+      : formattedPrice; // Use normal price if discounted price is missing
 
+    // Build the HTML for the product display
     productDiv.innerHTML = `
     <h3>${product.title}</h3>
     <div class="image-container">
@@ -68,7 +64,7 @@ function displayProducts(products) {
     // Functionality to navigate to the product page
     productDiv.onclick = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
-      window.location.href = "product/index.html";
+      window.location.href = "product/index.html"; // Redirect to product page
     };
 
     productList.appendChild(productDiv);
