@@ -1,3 +1,5 @@
+/* JavaScript for the product page showing a spesific product with details */
+
 // Retrieve the product data from local storage
 const productData = JSON.parse(localStorage.getItem("selectedProduct"));
 
@@ -38,6 +40,11 @@ if (productData) {
   } else {
     document.getElementById("product-sizes").innerText = "Sizes: Not available";
   }
+
+  // Display the base color
+  document.getElementById("product-base-color").innerText = `Base Color: ${
+    productData.baseColor || "Not specified"
+  }`;
 } else {
   // Redirect back to homepage if no product is found
   console.warn("No product data found. Redirecting to the homepage.");
@@ -55,8 +62,9 @@ if (addToCartButton) {
       onSale: productData.onSale || false, // Add on-sale status
       imageUrl: productData.image.url,
       sizes: productData.sizes ? productData.sizes.join(", ") : "Not available", // Cleaned-up sizes
+      baseColor: productData.baseColor || "Not specified", // Include base color
     };
 
-    addToCart(product);
+    addToCart(product); // Calls addToCart function from cart.js
   });
 }
