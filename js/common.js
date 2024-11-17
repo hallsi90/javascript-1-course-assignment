@@ -36,3 +36,19 @@ function formatPrice(price) {
     currency: "USD",
   }).format(price);
 }
+
+// Function to show spinner when loading products
+function showSpinner() {
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    spinner.style.display = "block";
+  }
+}
+
+// Function to hide spinner
+function hideSpinner() {
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    spinner.style.display = "none";
+  }
+}
