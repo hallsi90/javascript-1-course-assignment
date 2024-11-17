@@ -17,6 +17,9 @@ async function fetchProducts() {
     const result = await response.json(); // Get the JSON data
     const products = result.data; // Store the product data
 
+    // Store products in localStorage for filtering
+    localStorage.setItem("allProducts", JSON.stringify(products));
+
     displayProducts(products); // Pass the data array to displayProducts
   } catch (error) {
     displayMessage("Error fetching products: " + error.message); // Display error message
