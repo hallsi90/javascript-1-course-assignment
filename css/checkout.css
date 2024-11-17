@@ -144,7 +144,7 @@ p {
   border-top: 2px solid var(--design-details-color);
 }
 
-/* PROCESSING MESSAGE AND SPINNER */
+/* PROCESSING MESSAGE AND SPINNER (spinner styles in styles.css) */
 
 .processing-message {
   display: none; /* Hidden by default */
@@ -162,57 +162,6 @@ p {
   text-align: center;
   z-index: 1000; /* Ensures it appears on top */
   flex-direction: column; /* Stack spinner and text vertically */
-}
-
-/* Spinner from https://cssloaders.github.io/ */
-.spinner {
-  color: var(--design-details-color-light); /* Sets the spinner's color */
-  font-size: 1rem; /* Sets the size of the spinner */
-  width: 1em; /* Sets the width */
-  height: 1em; /* Sets the height */
-  border-radius: 50%; /* Makes the spinner circular */
-  position: relative; /* Positions the spinner relative to its parent */
-  text-indent: -9999em; /* Hides text content (for accessibility) */
-  animation: mulShdSpin 1.3s infinite linear; /* Applies spinning animation */
-  transform: translateZ(0); /* Improves rendering performance */
-  margin-top: 20px;
-}
-
-/* Spinner animation */
-@keyframes mulShdSpin {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
-      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
-      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
-      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-  }
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-  }
 }
 
 /* MEDIA QUERIES */
@@ -263,11 +212,6 @@ p {
 
   .processing-message {
     font-size: 3rem;
-  }
-
-  .spinner {
-    font-size: 1.5rem;
-    margin-top: 30px;
   }
 }
 
@@ -356,10 +300,5 @@ p {
 
   .processing-message {
     font-size: 4rem;
-  }
-
-  .spinner {
-    font-size: 2rem;
-    margin-top: 40px;
   }
 }
