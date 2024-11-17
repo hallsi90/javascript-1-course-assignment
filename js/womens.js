@@ -3,6 +3,8 @@
 const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 
 async function fetchWomensJackets() {
+  showSpinner(); // Show spinner before fetching
+
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
@@ -20,6 +22,8 @@ async function fetchWomensJackets() {
     displayProducts(womensJackets);
   } catch (error) {
     displayMessage("Error fetching women's jackets: " + error.message);
+  } finally {
+    hideSpinner(); // Always hide spinner after fetch completes
   }
 }
 

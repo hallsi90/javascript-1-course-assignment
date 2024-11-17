@@ -4,6 +4,8 @@ const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 
 // Function to fetch products from the API
 async function fetchProducts() {
+  showSpinner(); // Show spinner before fetching
+
   try {
     const response = await fetch(apiUrl);
 
@@ -18,6 +20,8 @@ async function fetchProducts() {
     displayProducts(products); // Pass the data array to displayProducts
   } catch (error) {
     displayMessage("Error fetching products: " + error.message); // Display error message
+  } finally {
+    hideSpinner(); // Always hide spinner after fetch completes
   }
 }
 
