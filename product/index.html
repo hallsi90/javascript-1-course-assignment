@@ -79,6 +79,7 @@
 
       <!-- Error message container -->
       <div id="error-message" class="error-message" aria-live="polite"></div>
+
       <main>
         <div class="product-details">
           <noscript>
@@ -93,12 +94,18 @@
             <img id="product-image" alt="Product Image" />
           </div>
           <p id="product-description">Description</p>
-          <hr />
+          <hr aria-hidden="true" />
           <p id="product-sizes">Sizes: Not available</p>
-          <hr />
+          <hr aria-hidden="true" />
           <p id="product-base-color">Color: Not specified</p>
-          <hr />
-          <p id="product-price" aria-live="polite">Price: 0 USD</p>
+          <hr aria-hidden="true" />
+          <p
+            id="product-price"
+            aria-live="polite"
+            aria-describedby="product-price-label"
+          >
+            Price: 0 USD
+          </p>
           <button class="cta-button" id="add-to-cart-button">
             Add to Cart
           </button>
