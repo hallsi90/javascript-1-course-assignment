@@ -2,6 +2,7 @@
 
 @import "imports/variables.css";
 @import "imports/header.css";
+@import "imports/footer.css";
 
 html {
   font-size: 62.5%;
@@ -139,60 +140,6 @@ img {
   border: 2px solid var(--error-message-text-color-color);
 }
 
-/* FOOTER */
-
-footer {
-  background-color: var(--main-white-color);
-  color: var(--main-blue-color);
-  padding: 0px 20px;
-  margin-top: 50px;
-}
-
-footer li {
-  margin-bottom: 5px;
-  font-size: 1.4rem;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  flex: 1;
-  margin-bottom: 20px;
-}
-
-.footer-column h4 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column a {
-  text-decoration: none;
-  color: var(--main-blue-color);
-}
-
-.social-media-list li {
-  margin-bottom: 10px;
-}
-.footer-bottom {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.footer-logo img {
-  width: 150px;
-  height: auto;
-  margin: 30px 0px;
-}
-
 /* MEDIA QUERIES */
 @media screen and (min-width: 500px) {
   .spinner {
@@ -205,38 +152,11 @@ footer li {
     font-size: 3rem;
   }
 }
-@media screen and (max-width: 599px) {
-  /* MEDIA QUERY FOOTER */
-  .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-bottom {
-    display: grid;
-  }
-
-  .footer-logo {
-    display: flex;
-    justify-content: center;
-  }
-}
 
 @media screen and (min-width: 600px) {
   .cta-button {
     padding: 10px 100px;
     font-size: 4rem;
-  }
-
-  /* MEDIA QUERY FOOTER */
-
-  .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .footer-logo img {
-    width: 150px;
   }
 }
 
@@ -257,28 +177,11 @@ footer li {
   #error-message.error {
     border: 4px solid var(--error-message-text-color);
   }
-
-  /* MEDIA QUERY FOOTER */
-  .footer-column h4 {
-    font-size: 1.8rem;
-  }
-
-  footer li {
-    font-size: 1.6rem;
-  }
 }
 
 @media screen and (min-width: 1023px) {
   .spinner {
     font-size: 2rem;
     margin-top: 70px;
-  }
-}
-
-@media screen and (min-width: 1279px) {
-  /* MEDIA QUERY FOOTER */
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
   }
 }
