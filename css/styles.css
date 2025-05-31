@@ -1,6 +1,7 @@
 /* GLOBAL STYLES */
 
 @import "imports/variables.css";
+@import "imports/header.css";
 
 html {
   font-size: 62.5%;
@@ -10,6 +11,7 @@ body {
   background-color: var(--main-blue-color);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
+  line-height: 1.2;
 }
 
 main {
@@ -137,95 +139,6 @@ img {
   border: 2px solid var(--error-message-text-color-color);
 }
 
-/* HEADER */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: var(--main-white-color);
-  color: var(--main-blue-color);
-}
-
-nav {
-  display: none;
-  position: absolute;
-  top: 49px;
-  right: 0px;
-  z-index: 1000;
-}
-
-nav ul {
-  padding: 0px;
-}
-
-nav li {
-  display: block;
-  padding: 10px 20px;
-  background-color: var(--design-details-color-light);
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--main-blue-color);
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.logo a {
-  text-decoration: none;
-  color: var(--main-blue-color);
-}
-
-.header-logo a img {
-  width: 100px;
-}
-
-.icons {
-  display: flex;
-  gap: 10px;
-}
-
-.hamburger-menu {
-  margin-left: 10px;
-}
-
-#hamburger-menu {
-  display: none;
-}
-
-#hamburger-menu:checked ~ nav {
-  display: block;
-}
-
-#cart-icon {
-  color: var(--main-blue-color);
-  position: relative;
-  display: inline-block;
-  font-size: 2rem; /* Adjust as needed for icon size */
-  color: var(--main-blue-color);
-  text-decoration: none;
-}
-
-/* Cart count badge styling */
-#cart-count {
-  position: absolute;
-  top: -10px; /* Adjust to bring it down slightly */
-  right: -4px; /* Adjust to bring it closer to the icon */
-  background-color: var(--main-blue-color);
-  color: var(--main-white-color);
-  font-size: 1rem;
-  font-weight: bold;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional shadow for effect */
-}
-
 /* FOOTER */
 
 footer {
@@ -293,27 +206,6 @@ footer li {
   }
 }
 @media screen and (max-width: 599px) {
-  /* MEDIA QUERY HEADER */
-  .header-logo {
-    display: flex;
-    flex-grow: 1;
-  }
-
-  i.hamburger-menu {
-    display: flex; /* Show the hamburger menu on smaller screens */
-    font-size: 2rem;
-  }
-
-  .menu {
-    display: flex;
-    order: 1;
-    padding-left: 2px;
-  }
-
-  nav li {
-    border: 2px solid var(--design-detail-color-light);
-  }
-
   /* MEDIA QUERY FOOTER */
   .footer-container {
     display: grid;
@@ -334,36 +226,6 @@ footer li {
   .cta-button {
     padding: 10px 100px;
     font-size: 4rem;
-  }
-
-  /* MEDIA QUERY HEADER */
-  i.hamburger-menu {
-    display: none; /* Hide the hamburger menu on larger screens */
-  }
-
-  header {
-    padding: 15px 20px;
-  }
-
-  nav {
-    display: flex;
-    position: static;
-  }
-
-  nav li {
-    display: inline-block;
-    padding: 10px;
-    font-size: 1.8rem;
-    background-color: var(--main-white-color);
-  }
-
-  .header-logo a img {
-    width: 100px;
-    height: auto;
-  }
-
-  .icons {
-    font-size: 1.8rem;
   }
 
   /* MEDIA QUERY FOOTER */
@@ -396,22 +258,6 @@ footer li {
     border: 4px solid var(--error-message-text-color);
   }
 
-  /* MEDIA QUERY HEADER */
-  header {
-    padding: 15px 30px;
-  }
-
-  nav a {
-    font-size: 2rem;
-  }
-
-  #cart-icon {
-    font-size: 2.5rem;
-  }
-  #cart-count {
-    font-size: 1.5rem;
-  }
-
   /* MEDIA QUERY FOOTER */
   .footer-column h4 {
     font-size: 1.8rem;
@@ -427,19 +273,9 @@ footer li {
     font-size: 2rem;
     margin-top: 70px;
   }
-
-  /* MEDIA QUERY HEADER */
-  nav li {
-    padding: 10px 30px;
-  }
 }
 
 @media screen and (min-width: 1279px) {
-  /* MEDIA QUERY HEADER */
-  nav li {
-    padding: 10px 50px;
-  }
-
   /* MEDIA QUERY FOOTER */
   .footer-container {
     display: flex;
