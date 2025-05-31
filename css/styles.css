@@ -140,6 +140,35 @@ img {
   border: 2px solid var(--error-message-text-color-color);
 }
 
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 16px;
+  font-size: 1.6rem;
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* Hide by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: var(--design-details-color-light);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 500px) {
   .spinner {
@@ -157,6 +186,10 @@ img {
   .cta-button {
     padding: 10px 100px;
     font-size: 4rem;
+  }
+
+  #scrollToTopBtn {
+    font-size: 2rem;
   }
 }
 
