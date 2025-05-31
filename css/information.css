@@ -24,7 +24,12 @@ ul {
 }
 
 a {
-  color: var(--design-detail-color-light);
+  color: var(--design-details-color-light);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--main-white-color);
 }
 
 /* MEDIA QUERIES */
