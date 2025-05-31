@@ -26,20 +26,17 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="header-logo">
-          <a href="index.html">
+      <header role="banner">
+        <div class="header-container">
+          <!-- Header Logo -->
+          <a href="index.html" class="logo" aria-label="Go to home page">
             <img
               src="images/logo/rainydays_logo_just_mountain.png"
               alt="Rainydays mountain logo"
           /></a>
-        </div>
-        <div class="menu">
-          <input type="checkbox" id="hamburger-menu" />
-          <label for="hamburger-menu"
-            ><i class="fa-solid fa-bars hamburger-menu" aria-label="Menu"></i
-          ></label>
-          <nav>
+
+          <!-- Navigation links -->
+          <nav id="mainNav" role="navigation" aria-label="Main menu">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="jackets.html">Jackets</a></li>
@@ -48,17 +45,37 @@
               <li><a href="about.html">About</a></li>
             </ul>
           </nav>
+
+          <!-- Hamburger menu and cart  -->
+          <div class="header-icons">
+            <!-- Hamburger menu button -->
+            <button
+              id="menuToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mainNav"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Cart icon with count-->
+            <div class="cart-container">
+              <a
+                href="checkout/index.html"
+                id="cart-icon"
+                aria-label="Go to checkout"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="icons">
-          <a href="checkout/index.html" id="cart-icon">
-            <i
-              class="fa-solid fa-cart-shopping"
-              aria-label="Go to checkout"
-            ></i>
-            <span id="cart-count">0</span>
-          </a>
-        </div>
+
+        <!-- Overlay when hamburger menu is open -->
+        <div id="overlay"></div>
       </header>
+
       <!-- Error message container -->
       <div id="error-message" class="error-message" aria-live="polite"></div>
       <main>
