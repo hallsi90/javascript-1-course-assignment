@@ -1,31 +1,95 @@
-/* GLOBAL STYLES */
+/* ===============================
+   GLOBAL STYLES FILE — MOBILE FIRST
+   =============================== */
+/*
+  style.css – Base layout, typography, buttons, spinner
+  Mobile-first approach
+  Shared across all pages
+*/
+
+/* ===============================
+   IMPORTS AND VARIABLES
+   =============================== */
 
 @import "imports/variables.css";
 @import "imports/header.css";
 @import "imports/footer.css";
 
+/* ===============================
+   RESET & BASE STYLES
+   =============================== */
+
+/* Set base font size to 62.5% (10px) so 1rem = 10px */
 html {
   font-size: 62.5%;
 }
 
 body {
+  display: flex; /* Layout utility: ensures footer stays at bottom of viewport on short pages */
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
   background-color: var(--main-blue-color);
+  color: var(--main-white-color);
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0px;
-  line-height: 1.2;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1.5;
 }
 
 main {
-  margin: 30px;
-  color: var(--main-white-color);
-  flex: 1; /* Allow main content to grow and push footer down */
+  margin: 10px 30px;
+  flex-grow: 1; /* Allow main content to grow and push footer down */
 }
 
-/* Makes sure footer is pushed to the bottom of the page when little content on page */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Make wrapper fill the viewport height */
+/* -------------------------------
+   TYPOGRAPHY STYLES
+-------------------------------- */
+
+/* Letter spacing */
+h1,
+h2,
+h3,
+h4,
+button,
+.cta-button,
+nav li a {
+  letter-spacing: 0.5px;
+}
+
+/* Font sizes */
+h1 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--main-blue-color);
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+p,
+ul,
+li {
+  font-size: 1.4rem;
+}
+
+small {
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  font-size: 1.4rem;
 }
 
 a {
@@ -35,6 +99,100 @@ a {
 img {
   width: 100%;
 }
+
+/* ===============================
+   BUTTON STYLES
+   =============================== */
+
+/* CTA BUTTONS (add to cart and checkout) */
+.cta-button {
+  color: var(--main-blue-color);
+  background-color: var(--main-white-color);
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+  transition: ease-in-out 200ms;
+}
+
+.cta-button:hover {
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
+  border: 2px solid var(--main-white-color);
+}
+
+/* ===============================
+   ERROR AND SUCCESS MESSAGES
+   =============================== */
+
+#error-message {
+  position: fixed;
+  top: 30%; /* Adjust as needed to control placement */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  max-width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  z-index: 1000; /* Ensure it appears on top */
+  display: none; /* Hide initially */
+}
+
+#error-message.success {
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border: 2px solid var(--design-details-color);
+}
+
+#error-message.error {
+  background-color: var(--error-message-main-color);
+  color: var(--error-message-text-color);
+  border: 2px solid var(--error-message-text-color-color);
+}
+
+/* ===============================
+   SCROLL TO TOP BUTTON
+   =============================== */
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 16px;
+  font-size: 1.6rem;
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* Hide by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: var(--design-details-color-light);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   SPINNER STYLES
+   =============================== */
 
 /* Spinner from https://cssloaders.github.io/ with small alterations*/
 .spinner {
@@ -88,133 +246,105 @@ img {
   }
 }
 
-/* CTA BUTTONS (add to cart and checkout) */
+/* ===============================
+   MEDIA QUERIES
+   =============================== */
 
-.cta-button {
-  color: var(--main-blue-color);
-  background-color: var(--main-white-color);
-  padding: 10px 60px;
-  font-size: 2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 0 auto;
-  display: flex;
-  border: none;
-  box-shadow: 5px 5px 5px black;
-}
-.cta-button:hover {
-  color: var(--main-white-color);
-  background-color: var(--main-blue-color);
-  border: 2px solid var(--main-white-color);
-  transition: ease-in-out 200ms;
-}
-
-/* ERROR AND SUCCESS MESSAGES */
-
-#error-message {
-  position: fixed;
-  top: 30%; /* Adjust as needed to control placement */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px;
-  max-width: 80%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  z-index: 1000; /* Ensure it appears on top */
-  display: none; /* Hide initially */
-}
-
-#error-message.success {
-  background-color: var(--main-white-color);
-  color: var(--main-blue-color);
-  border: 2px solid var(--design-details-color);
-}
-
-#error-message.error {
-  background-color: var(--error-message-main-color);
-  color: var(--error-message-text-color);
-  border: 2px solid var(--error-message-text-color-color);
-}
-
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 12px 16px;
-  font-size: 1.6rem;
-  background-color: var(--main-white-color);
-  color: var(--main-blue-color);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-
-  /* Hide by default */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-#scrollToTopBtn:hover {
-  background-color: var(--design-details-color-light);
-}
-
-#scrollToTopBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* MEDIA QUERIES */
-@media screen and (min-width: 500px) {
-  .spinner {
-    font-size: 1.5rem;
-    margin-top: 50px;
+/* TABLET (768px - 1024px) */
+@media (min-width: 768px) {
+  /* Global */
+  body {
+    font-size: 1.6rem;
   }
 
-  .cta-button {
-    padding: 10px 80px;
-    font-size: 3rem;
+  main {
+    margin: 10px 40px;
   }
-}
 
-@media screen and (min-width: 600px) {
-  .cta-button {
-    padding: 10px 100px;
-    font-size: 4rem;
+  /* Typography */
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  p,
+  ul,
+  li {
+    font-size: 1.6rem;
+  }
+
+  small {
+    font-size: 1.4rem;
+  }
+
+  #error-message {
+    font-size: 1.4rem;
   }
 
   #scrollToTopBtn {
     font-size: 2rem;
   }
+
+  .spinner {
+    font-size: 1.5rem;
+  }
+
+  /* Buttons */
+  .cta-button {
+    font-size: 1.6rem;
+  }
 }
 
-@media screen and (min-width: 800px) {
-  .cta-button {
-    padding: 15px 150px;
-    font-size: 4rem;
+/* DESKTOP (1024px and up) */
+@media screen and (min-width: 1024px) {
+  /* Global */
+  body {
+    font-size: 1.8rem;
+  }
+
+  main {
+    margin: 10px 50px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p,
+  ul {
+    font-size: 1.8rem;
   }
 
   #error-message {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
-  #error-message.success {
-    border: 4px solid var(--design-details-color);
-  }
-
-  #error-message.error {
-    border: 4px solid var(--error-message-text-color);
-  }
-}
-
-@media screen and (min-width: 1023px) {
-  .spinner {
-    font-size: 2rem;
-    margin-top: 70px;
+  .cta-button {
+    font-size: 1.8rem;
+    padding: 15px 30px;
   }
 }
