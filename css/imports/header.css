@@ -41,7 +41,7 @@ nav {
   transform: translateY(-10px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
   position: absolute;
-  top: 59px;
+  top: 63px;
   right: 0;
   background-color: var(--design-details-color-light);
   z-index: 1000;
@@ -88,6 +88,7 @@ nav a:hover {
   cursor: pointer;
   color: var(--main-blue-color);
   transition: color 0.3s ease-in-out;
+  order: 2; /* Ensure it is placed after the cart icon */
 }
 
 #menuToggle:hover {
@@ -103,6 +104,7 @@ nav a:hover {
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  order: 1; /* Ensure it is placed before the hamburger menu icon */
 }
 
 #cart-icon:hover {
