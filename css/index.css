@@ -1,9 +1,5 @@
 /* STYLING FOR THE INTRODUCTION SECTION OF THE HOME PAGE */
 
-section {
-  margin-bottom: 40px;
-}
-
 .introduction-content-container {
   color: var(--main-white-color);
   background-color: var(--main-white-color);
@@ -191,10 +187,6 @@ section {
 }
 
 @media screen and (min-width: 600px) {
-  main {
-    margin: 50px;
-  }
-
   .background h1 {
     font-size: 4rem;
   }
