@@ -1,74 +1,164 @@
-JavaScript 1 Course Assignment
+# 🌧️ Rainydays
 
-Brief
+![Rainydays Preview](./images/preview/rainydays-preview.png)
 
-Using your new skills writing JavaScript, create an interactive online store to display product from an API endpoint. Use one of the three provided API urls to display products in HTML and allow users to create a basket of items.
+Rainydays is a fictional e-commerce website for a premium rain jacket brand. This project was completed over multiple course assignments at Noroff: one for Design, one for HTML & CSS and one for JavaScript, and later updated for Portfolio 1 presentation. The site allows users to browse, filter, and purchase rain jackets through a fully functioning multi-page interface.
 
-You may use your existing cross course project code as a starting point, or start a fresh project if this is not available. We recommend using an existing project as styling will not be graded, but is nice to have in the final submission.
+1. **Design Course Assignment:** Create a high-fidelity interactive prototype in Figma based on provided Rainydays brief.
+2. **HTML & CSS Course Assignment:** Build a fully responsive, accessible multi-page website based on the Figma prototype created during the Design Course Assignment.
+3. **JavaScript 1 Course Assignment:** Add interactivity and product data from a public API to simulate a functioning online store.
+4. **Portfolio 1 Course Assignment:** Refactor and improve the project using newly learned skills and feedback.
 
-User Stories
+---
 
-- As a user, I want to view a list of products on the homepage.
-- As a user, I want to filter products by category, gender or genre.
-- As a user, I want to view a single product page with more detail.
-- As a user, I want to add a product to my basket.
-- As a user, I want to remove a product from my basket.
-- As a user, I want to view a summary of my cart on the checkout page.
-- As a user, I want to view an order-confirmation screen after checking out.
+## 📌 Project Goals
 
-Required Pages
+**Design Brief:**
 
-The following pages are required to complete this assignment.
+- **Client:** Rainydays – an online shop selling men’s and women’s rain jackets
+- **Slogan:** Pushing the Comfort Zone
+- **Target Audience:** Adults aged 30–50 who enjoy outdoor activities such as hiking, exploring, skiing, camping, and canoeing
 
-- Home Page containing product list `/index.html`
-- Product Page showing all details of a specific product `/product/index.html`
-- Checkout Page showing all items in the basket `/checkout/index.html`
-- Confirmation Page showing a thank you message `/checkout/confirmation/index.html`
+**HTML & CSS Brief:**
 
-Optional Pages
+- Build a multi-page, responsive site using semantic HTML.
+- Ensure the site meets accessibility (WCAG) standards.
+- Use Flexbox and Grid without CSS frameworks.
+- Avoid duplicate CSS and validate code using W3C and WAVE tools.
 
-The following pages are not required to complete this assignment, but help to improve the realism for those with extra time.
+**JavaScript Brief:**
 
-- Category Pages (e.g. Male/Female Clothing, Movie Genres)
-- Terms and Conditions page (this may be AI generated)
-- Privacy Policy (this may be AI generated)
-- My Profile
+- Fetch and display real products from the [Noroff Rainydays API](https://v2.api.noroff.dev/rainy-days).
+- Allow users to browse, filter, add products to a cart, and complete a checkout.
+- Handle errors and show loading indicators for all API actions.
+- Write accessible, usable, and `async`-based JavaScript with no hardcoded product data.
 
-Process
+**Portfolio 1 Brief:**
 
-- Decide if you will use your existing project, or a fresh project.
-- Open your project in GitHub Desktop and VS Code.
-- Select one of the three provided endpoints from the list below.
-- Checkout the API documentation for your chosen endpoint.
-- Work through the requirements in JavaScript one by one.
-- Test your work thoroughly and ask for peer review.
-- Offer to review two other student's work.
-- Make any final changes, and submit for delivery.
+- Apply new skills to enhance the old assignments.
+- Make improvements based on teacher feedback.
+- Make improvements based on self-assessment.
+- Reflect on the development process and prepare the project for portfolio presentation.
 
-Resources
+---
 
-You have been provided with three options to choose from:
+## 🧰 Built With
 
-- Rainy Days API - Outdoor clothing
-- GameHub API - Video games
-- Square Eyes API - Movies
+- **HTML5** – Semantic and accessible
+- **CSS3** – Responsive design with Flexbox and Grid
+- **Vanilla JavaScript** – Modular, asynchronous, no frameworks
 
-The documentation website for each endpoint explains which options are available on the provided objects. These properties should be used and displayed to the user in your application. You are only required to select one of the endpoints but if you wish to implement more than one that will be accepted.
+---
 
-Important Features
+## 🚀 Getting Started
 
-This list is a non-exhaustive list of important things to keep in mind before delivery:
+### Installing
 
-- Errors should be handled for the user, such that they are alerted when something goes wrong like an API call.
-- A loading indicator should be shown to the user whenever they are waiting for an asynchronous action to finish.
-- There should be no hardcoded product data in your final submission.
+To get a local copy up and running, follow these simple steps:
 
-Although the focus on marking is on JavaScript, the site still needs to be accessible and usable for the user. If we cannot access functionality that has been coded, it will be marked as if the coding was not done.
+Clone the repo:
 
-- Use `async` instead of `then` syntax for asynchronous actions.
-- Remove all console.log statements before delivery.
+git clone https://github.com/hallsi90/javascript-1-course-assignment.git
 
-Delivery
+If you're just viewing the site, no dependencies are needed since it is a static frontend project.
 
-- GitHub repository with JavaScript code in the default (main/master) branch
-- Written reflection on the CA process
+### Running
+
+Just open the index.html file in your browser, or visit the GitHub Pages live deployment.
+
+## 🚀 Live Site
+
+🔗 [View Website on GitHub Pages](https://hallsi90.github.io/javascript-1-course-assignment/)
+
+---
+
+## 🤝 Contributing
+
+This is a student project and not actively maintained, but if you'd like to give feedback or suggestions, feel free to fork the repo and open a pull request.
+
+---
+
+## 🧠 Key Features
+
+✅ **Responsive Layout** – Fully mobile-first using Grid/Flexbox  
+✅ **Semantic HTML & Meta Tags** – Unique `<title>`, `<h1>`, and `<meta name="description">` on every page  
+✅ **Product Listing** – Loads live API data  
+✅ **Dynamic Filtering** – By gender (dropdown or page-based)  
+✅ **Product Detail Page** – Includes title, image, alt text, sizes, and sale price  
+✅ **Cart System** – Add, remove, and update quantities (stored in `localStorage`)  
+✅ **Checkout Page** – View all items with total and quantity controls  
+✅ **Order Confirmation Page** – Shows thank-you message after checkout  
+✅ **Scroll-To-Top Button** – Smooth scroll with accessibility  
+✅ **Custom Hamburger Menu** – Built using JavaScript  
+✅ **Loading Spinner** – Visual indicator while waiting for API responses  
+✅ **Error Handling** – Alerts user when something goes wrong  
+✅ **Accessibility Enhancements** – aria-labels, keyboard nav, image alt text
+
+---
+
+## 🔁 Refactoring Improvements
+
+During the improvement phase, multiple JS files were merged to avoid duplication:
+
+| Old Files         | Replaced With        |
+| ----------------- | -------------------- |
+| `mens.js`         | → `productfilter.js` |
+| `womens.js`       | → `productfilter.js` |
+| `genderfilter.js` | → `productfilter.js` |
+
+✨ `productfilter.js` handles filtering dynamically via:
+
+- A dropdown menu (on `index.html` and `jackets.html`)
+- A `data-gender` attribute (on `men.html` and `women.html`)
+
+---
+
+## 🧠 Reflection Summary
+
+This project helped me:
+
+- Develop cleaner code and split concerns using separate HTML, CSS, and JS files
+- Improve accessibility through aria attributes and better alt text
+- Understand how to fetch, filter, and display real API data
+- Manage user interactions (cart, checkout, filtering) in a modular way
+- Refactor and optimize repeated logic into reusable components
+
+---
+
+## 💡 Future Improvements
+
+- Refactor cart logic to use `product.id` instead of `title`
+- Add animations or visual feedback when items are added to the cart
+- Avoid full cart re-rendering during quantity changes
+- Move reusable config like currency and redirect time into constants
+- Restructure folders into `/pages/` and `/products/` for clarity
+- Consider JS modules and reusable components
+
+---
+
+## ✅ Status
+
+🎓 Project completed for Cross-Course HTML/CSS and JavaScript assignments  
+🛠️ Continually improved as part of final portfolio assessment
+
+---
+
+## 📄 License
+
+This project was created for educational use as part of the Noroff Frontend Development program.
+
+---
+
+## 🙏 Acknowledgments
+
+- Noroff Frontend Development Course
+- Teacher feedback and guidance
+- W3C, WAVE and Lighthouse tools for accessibility and validation
+
+---
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/hallsi90/javascript-1-course-assignment)
+- [Deployed Site](https://hallsi90.github.io/javascript-1-course-assignment/)
+- [Figma Design File](https://www.figma.com/design/zU7iIMw4YsixrlaxV9OpLi/Design-Course-Assignment-05.11.23-Front-end-Development---Ingelinn-Hallseth?node-id=1-1131&p=f&t=Gkz7LXulHVzoBDBb-0)
