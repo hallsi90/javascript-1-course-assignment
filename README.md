@@ -125,7 +125,7 @@ This project helped me:
 
 ---
 
-## 💡 Future Improvements
+## 💡 Potential Future Improvements
 
 - Refactor cart logic to use `product.id` instead of `title`
 - Add animations or visual feedback when items are added to the cart
@@ -138,7 +138,7 @@ This project helped me:
 
 ## ✅ Status
 
-🎓 Project completed for Cross-Course HTML/CSS and JavaScript assignments  
+🎓 Project completed for Cross-Course Design, HTML/CSS, and JavaScript assignments  
 🛠️ Continually improved as part of final portfolio assessment
 
 ---
